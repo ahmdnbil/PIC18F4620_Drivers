@@ -351,6 +351,7 @@ Std_ReturnType gpio_port_toggle_logic(port_index_t port);
 
 
 
+
 typedef struct
 {
     pin_config_t keypad_row_pins[4];
@@ -406,11 +407,11 @@ Std_ReturnType keypad_get_value(const keypad_t *keypad, uint8 *value)
 
             for(l_counter=0;l_counter<4;l_counter++)
             {
-                ret=gpio_pin_write_logic(&(keypad->keypad_col_pins[l_counter]),LOW);
+                ret=gpio_pin_write_logic(&(keypad->keypad_row_pins[l_counter]),LOW);
             }
 
 
-            ret=gpio_pin_write_logic(&(keypad->keypad_col_pins[rows_counter]),HIGH);
+            ret=gpio_pin_write_logic(&(keypad->keypad_row_pins[rows_counter]),HIGH);
             for(cols_counter=0;cols_counter<4;cols_counter++)
             {
                 ret=gpio_pin_read_logic(&(keypad->keypad_col_pins[cols_counter]),&getValue);

@@ -17,6 +17,7 @@
 #include "./ecu_keypad.h"
 
 /*----------------------MACRO declarations--------------------------*/
+#define NOT_PRESSED 0x00U
 /*----------------------MACRO Functions-----------------------------*/
 #define ECU_KEYPAD_ROWS 4
 #define ECU_KEYPAD_COLS 4

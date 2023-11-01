@@ -11,13 +11,7 @@
 
 #include "./ecu_keypad.h"
 
-const uint8 btn_values[ECU_KEYPAD_COLS][ECU_KEYPAD_ROWS]=
-{
-    {'7','8','9','/'},
-    {'4','5','6','*'},
-    {'1','2','3','-'},
-    {'#','0','=','+'}
-};
+const uint8 btn_values[ECU_KEYPAD_COLS][ECU_KEYPAD_ROWS]={{'7','8','9','/'},{'4','5','6','*'},{'1','2','3','-'},{'#','0','=','+'}};
 Std_ReturnType keypad_initalize(const keypad_t *keypad)
 {
     Std_ReturnType ret=E_OK;
@@ -55,11 +49,11 @@ Std_ReturnType keypad_get_value(const keypad_t *keypad, uint8 *value)
             //make sure that each row is zero volt
             for(l_counter=0;l_counter<ECU_KEYPAD_ROWS;l_counter++)
             {
-                ret=gpio_pin_write_logic(&(keypad->keypad_col_pins[l_counter]),LOW);
+                ret=gpio_pin_write_logic(&(keypad->keypad_row_pins[l_counter]),LOW);
             }
             
             //activate the row which all columns will be checked based on
-            ret=gpio_pin_write_logic(&(keypad->keypad_col_pins[rows_counter]),HIGH);
+            ret=gpio_pin_write_logic(&(keypad->keypad_row_pins[rows_counter]),HIGH);
             for(cols_counter=0;cols_counter<ECU_KEYPAD_COLS;cols_counter++)
             {
                 ret=gpio_pin_read_logic(&(keypad->keypad_col_pins[cols_counter]),&getValue);
