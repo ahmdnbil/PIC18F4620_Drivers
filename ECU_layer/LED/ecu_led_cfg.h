@@ -1,8 +1,12 @@
-/* 
- * File:   ecu_lec_cfg.h
- * Author: User
+/**
+ * @file ecu_led_cfg.h
+ * @author Ahmed Nabil (you@domain.com)
+ * @brief
+ * @version 0.1
+ * @date October 11, 2023, 8:53 PM
  *
- * Created on October 25, 2023, 2:29 PM
+ * @copyright Copyright (c) 2023
+ *
  */
 
 #ifndef ECU_LED_CFG_H

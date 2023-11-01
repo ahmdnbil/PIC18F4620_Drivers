@@ -1,8 +1,12 @@
-/* 
- * File:   ecu_button_cfg.h
- * Author: User
+/**
+ * @file ecu_button_cfg.h
+ * @author Ahmed Nabil (you@domain.com)
+ * @brief
+ * @version 0.1
+ * @date 26, 2023, 12:50 PM
  *
- * Created on October 26, 2023, 12:50 PM
+ * @copyright Copyright (c) 2023
+ *
  */
 
 #ifndef ECU_BUTTON_CFG_H

@@ -1,9 +1,14 @@
-/* 
- * File:   ecu_led.c
- * Author: Ahmed Nabil
+/**
+ * @file ecu_led.c
+ * @author Ahmed Nabil (you@domain.com)
+ * @brief
+ * @version 0.1
+ * @date October 11, 2023, 8:53 PM
  *
- * Created on October 11, 2023, 8:53 PM
+ * @copyright Copyright (c) 2023
+ *
  */
+
 
 
 #include "ecu_led.h"
