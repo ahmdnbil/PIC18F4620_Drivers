@@ -12,21 +12,22 @@
 #ifndef HAL_GPIO_H
 #define	HAL_GPIO_H
 
-/* section includes*/
+/*----------------------------Section includes---------------------------------*/
+#include "./../proc/pic18f4620.h"
 #include "../mcal_std_types.h"
 #include "../device_config.h"
 #include "./hal_gpio_cfg.h"
 
 
 
-/* MACRO function declarations */
-#define HWRREG8(_X)  *((uint8 volatile*)_X)
+
+
+/*----------------------------MACRO Functions----------------------------------*/
 #define SET_BIT(reg,bitNo)    (reg|=(BIT_MASK<<bitNo))
 #define CLR_BIT(reg,bitNo)    (reg&=~(BIT_MASK<<bitNo))
 #define TOGGLE_BIT(reg,bitNo) (reg^=(BIT_MASK<<bitNo))
 #define READ_BIT(reg,bitNo)   (reg >> bitNo) & BIT_MASK
-
-/* MACRO Declarations */
+/***********************MACRO declarations*******************************/
 #define TRISE HWRREG8(0xF96)
 #define TRISD HWRREG8(0xF95)
 #define TRISC HWRREG8(0xF94)
@@ -53,8 +54,7 @@
 #define PORT_MAX_NUMBER         5
 #define PORT_PIN_CONFIGURATIONS CONFIG_ENABLE
 #define PORT_CONFIGURATIONS     CONFIG_ENABLE
-/* Data types*/
-
+/***********************Data types***************************************/
 typedef enum{
     LOW=0,
     HIGH
@@ -94,7 +94,7 @@ typedef struct
     uint8 logic:1;     /* @ref logic_t */
 }pin_config_t;
 
-/*function declarations */
+/***********************function declarations****************************/
 Std_ReturnType gpio_pin_direction_initalize(const pin_config_t* _pin_config);
 Std_ReturnType gpio_pin_get_direction_status(const pin_config_t* _pin_config,direction_t *direction_status);
 Std_ReturnType gpio_pin_write_logic(const pin_config_t* _pin_config,logic_t logic);

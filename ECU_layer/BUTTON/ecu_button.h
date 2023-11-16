@@ -12,15 +12,13 @@
 #ifndef ECU_BUTTON_H
 #define	ECU_BUTTON_H
 
-/* section includes*/
+/*-------------------------------------section includes---------------------------------------*/
 #include "./../../MCAL_layer/GPIO/hal_gpio.h"
 #include "./ecu_button_cfg.h"
+/*---------------------------------------MACRO Declarations-----------------------------------*/
+/*---------------------------------------MACRO function declarations--------------------------*/
 
-/* MACRO Declarations */
-
-/* MACRO function declarations */
-
-/* Data types*/
+/*---------------------------------------Data types-------------------------------------------*/
 typedef enum 
 {
     BUTTON_PRESSED,
@@ -40,7 +38,7 @@ typedef struct
     button_active_t button_active;
 }button_t;
 
-/*function declarations */
+/*---------------------------------------function declarations--------------------------------*/
 
 /**
  * @brief 

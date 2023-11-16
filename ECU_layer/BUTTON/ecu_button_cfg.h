@@ -12,15 +12,12 @@
 #ifndef ECU_BUTTON_CFG_H
 #define	ECU_BUTTON_CFG_H
 
-/* section includes*/
+/*-------------------------------------section includes---------------------------------------*/
+/*---------------------------------------MACRO Declarations-----------------------------------*/
+/*---------------------------------------MACRO function declarations--------------------------*/
+/*---------------------------------------Data types-------------------------------------------*/
+/*---------------------------------------function declarations--------------------------------*/
 
-/* MACRO Declarations */
-
-/* MACRO function declarations */
-
-/* Data types*/
-
-/*function declarations */
 
 #endif	/* ECU_BUTTON_CFG_H */
 

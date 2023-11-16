@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "ecu_lcd.h": "c",
+    "hal_gpio.h": "c",
+    "mcal_interrupt_cfg.h": "c",
+    "mcal_std_types.h": "c"
+  }
+}

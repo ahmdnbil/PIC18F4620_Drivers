@@ -16,12 +16,15 @@
 /* section includes*/
 
 #include "./ECU_layer/ecu_layer_init.h"
+#include "./MCAL_layer/interrupt/mcal_external_interrupt.h"
 /* MACRO Declarations */
 #define _XTAL_FREQ 4000000UL
 /* MACRO function declarations */
 
 /* Data types*/
-extern keypad_t keypad;
+//extern keypad_t keypad;
+extern lcd_8bit_t lcd_8bit;
+extern lcd_4bit_t lcd_4bit;
 
 /*function declarations */
 

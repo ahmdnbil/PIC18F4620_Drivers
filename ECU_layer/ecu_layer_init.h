@@ -20,6 +20,7 @@
 #include "./LED/ecu_led.h"
 #include "./RELAY/ecu_relay.h"
 #include "./SSD/ecu_ssd.h"
+#include "./LCD/ecu_lcd.h"
 
 /*----------------------MACRO declarations--------------------------*/
 /*----------------------MACRO Functions-----------------------------*/

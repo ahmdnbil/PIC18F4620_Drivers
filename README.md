@@ -1,4 +1,4 @@
-## **ATmega32**
+## **PIC18F4620**
 ---
 
 | No    | Driver        | Status        |
@@ -10,4 +10,6 @@
 |5      | SSD           | ✔️           |
 |6      | keypad        | ✔️           |
 |7      | Button        | ✔️           |
+|8      | LCD           | ✔️           |
+|8      | EXTernal INT  | ✔️           |
 

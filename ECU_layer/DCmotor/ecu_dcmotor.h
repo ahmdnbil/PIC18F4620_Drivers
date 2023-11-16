@@ -12,14 +12,17 @@
 #ifndef ECU_DCMOTOR_H
 #define	ECU_DCMOTOR_H
 
-/***********************Section includes*********************************/
+/*-------------------------------------section includes---------------------------------------*/
 #include "./../../MCAL_layer/GPIO/hal_gpio.h"
 #include "./ecu_dcmotor_cfg.h"
-/***********************MACRO declarations*******************************/
+
+/*---------------------------------------MACRO Declarations-----------------------------------*/
 #define DC_MOTOR_ON  0x01U
 #define DC_MOTOR_OFF 0x00U
-/***********************MACRO Functions**********************************/
-/***********************Data types***************************************/
+
+/*---------------------------------------MACRO function declarations--------------------------*/
+
+/*---------------------------------------Data types-------------------------------------------*/
 typedef struct 
 {
     uint8 dc_motor_port:4;
@@ -34,7 +37,7 @@ typedef struct
 
 }dc_motor_t;
 
-/***********************function declarations****************************/
+/*---------------------------------------function declarations--------------------------------*/
 Std_ReturnType dc_motor_initialize(const dc_motor_t * _motor);
 Std_ReturnType dc_motor_move_right(const dc_motor_t * _motor);
 Std_ReturnType dc_motor_move_left(const dc_motor_t * _motor);

@@ -12,16 +12,17 @@
 #ifndef ECU_RELAY_H
 #define	ECU_RELAY_H
 
-/*************************************Section includes****************************/
+/*-------------------------------------section includes---------------------------------------*/
 #include "./../../MCAL_layer/GPIO/hal_gpio.h"
 #include "./ecu_relay_cfg.h"
 
-/*************************************MACRO declaration****************************/
+/*---------------------------------------MACRO Declarations-----------------------------------*/
 #define REALY_ON_STATUS  0x01U
 #define REALY_OFF_STATUS 0x00U
-/*************************************MACRO Functions****************************/
 
-/*************************************Data types****************************/
+/*---------------------------------------MACRO function declarations--------------------------*/
+
+/*---------------------------------------Data types-------------------------------------------*/
 typedef struct
 {
     uint8 relay_port:4;
@@ -29,8 +30,7 @@ typedef struct
     uint8 relay_status:1;
 }relay_t;
 
-/*************************************Function Declarations****************************/
-
+/*---------------------------------------function declarations--------------------------------*/
 /**
  * @brief
  *      it will initiate the relay module for the specified pin

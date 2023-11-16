@@ -9,13 +9,11 @@
 #define	MCAL_STD_TYPES_H
 
 
-/* section includes*/
+/***********************Section includes*********************************/
 #include "./std_libraries.h"
 #include "./compiler.h"
 
-/* MACRO Declarations */
-
-
+/***********************MACRO declarations*******************************/
 
 #define STD_HIGH   0x01
 #define STD_LOW    0x00
@@ -29,9 +27,10 @@
 #define E_OK     (Std_ReturnType)0x01
 #define E_NOT_OK (Std_ReturnType)0x00
 
-/* MACRO function declarations */
+/***********************MACRO Functions**********************************/
+#define HWRREG8(_X)  *((uint8 volatile*)_X)
 
-/* Data types*/
+/***********************Data types***************************************/
 typedef unsigned char  uint8;
 typedef unsigned short uint16;
 typedef unsigned int   uint32;
@@ -41,10 +40,10 @@ typedef signed int     sint32;
 
 typedef uint8 Std_ReturnType;
 
-
-
-
-
-/*function declarations */
+/***********************function declarations****************************/
 #endif	/* MCAL_STD_TYPES_H */
+
+
+
+
 

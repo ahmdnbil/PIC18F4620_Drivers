@@ -59,7 +59,14 @@ Std_ReturnType keypad_get_value(const keypad_t *keypad, uint8 *value)
                 ret=gpio_pin_read_logic(&(keypad->keypad_col_pins[cols_counter]),&getValue);
                 if(HIGH ==getValue)
                 {
+                    getValue=LOW;
                     *value=btn_values[rows_counter][cols_counter];
+                    ret=gpio_pin_read_logic(&(keypad->keypad_col_pins[cols_counter]),&getValue);
+                    while(HIGH == getValue)
+                    {
+                        getValue=LOW;
+                        ret=gpio_pin_read_logic(&(keypad->keypad_col_pins[cols_counter]),&getValue);
+                    }
                 }
             }
             

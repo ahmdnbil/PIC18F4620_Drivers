@@ -17,6 +17,10 @@
           <itemPath>ECU_layer/KEYPAD/ecu_keypad.h</itemPath>
           <itemPath>ECU_layer/KEYPAD/ecu_keypad_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="LCD" displayName="LCD" projectFiles="true">
+          <itemPath>ECU_layer/LCD/ecu_lcd.h</itemPath>
+          <itemPath>ECU_layer/LCD/ecu_lcd_cfg.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_layer/LED/ecu_led.h</itemPath>
           <itemPath>ECU_layer/LED/ecu_led_cfg.h</itemPath>
@@ -35,6 +39,13 @@
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_layer/GPIO/hal_gpio.h</itemPath>
           <itemPath>MCAL_layer/GPIO/hal_gpio_cfg.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="interrupt" displayName="interrupt" projectFiles="true">
+          <itemPath>MCAL_layer/interrupt/mcal_internal_interrupt.h</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_interrupt_cfg.h</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_external_interrupt.h</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_interrupt_manager.h</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
         <itemPath>MCAL_layer/compiler.h</itemPath>
         <itemPath>MCAL_layer/device_config.h</itemPath>
@@ -60,6 +71,9 @@
         <logicalFolder name="KEYPAD" displayName="KEYPAD" projectFiles="true">
           <itemPath>ECU_layer/KEYPAD/ecu_keypad.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="LCD" displayName="LCD" projectFiles="true">
+          <itemPath>ECU_layer/LCD/ecu_lcd.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_layer/LED/ecu_led.c</itemPath>
         </logicalFolder>
@@ -74,6 +88,11 @@
       <logicalFolder name="MCAL_layer" displayName="MCAL_layer" projectFiles="true">
         <logicalFolder name="GPIO" displayName="GPIO" projectFiles="true">
           <itemPath>MCAL_layer/GPIO/hal_gpio.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="interrupt" displayName="interrupt" projectFiles="true">
+          <itemPath>MCAL_layer/interrupt/mcal_external_interrupt.c</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_internal_interrupt.c</itemPath>
+          <itemPath>MCAL_layer/interrupt/mcal_interrupt_manager.c</itemPath>
         </logicalFolder>
         <itemPath>MCAL_layer/device_config.c</itemPath>
       </logicalFolder>

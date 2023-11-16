@@ -19,4 +19,9 @@ ECU_layer/./LED/./ecu_led_cfg.h  \
 ECU_layer/./RELAY/ecu_relay.h  \
 ECU_layer/./RELAY/./ecu_relay_cfg.h  \
 ECU_layer/./SSD/ecu_ssd.h  \
-ECU_layer/./SSD/./ecu_ssd_cfg.h 
+ECU_layer/./SSD/./ecu_ssd_cfg.h  \
+ECU_layer/./LCD/ecu_lcd.h  \
+ECU_layer/./LCD/./ecu_lcd_cfg.h  \
+MCAL_layer/interrupt/mcal_external_interrupt.h  \
+MCAL_layer/interrupt/./mcal_interrupt_cfg.h  \
+MCAL_layer/interrupt/./mcal_interrupt_gen_cfg.h 

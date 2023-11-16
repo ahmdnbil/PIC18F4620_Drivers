@@ -13,16 +13,14 @@
 #ifndef ECU_LED_H
 #define	ECU_LED_H
 
-/* section includes*/
+/*-------------------------------------section includes---------------------------------------*/
 #include "./../../MCAL_layer/GPIO/hal_gpio.h"
 #include "./ecu_led_cfg.h"
 
 
-/* MACRO Declarations */
-
-/* MACRO function declarations */
-
-/* Data types*/
+/*---------------------------------------MACRO Declarations-----------------------------------*/
+/*---------------------------------------MACRO function declarations--------------------------*/
+/*---------------------------------------Data types-------------------------------------------*/
 typedef enum {
 LED_OFF,
 LED_ON
@@ -33,8 +31,8 @@ typedef struct{
     uint8 pin:3;
     uint8 led_status:1;
 }led_t;
-/*function declarations */
 
+/*---------------------------------------function declarations--------------------------------*/
 /**
  * @brief 
  * 
