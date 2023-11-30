@@ -11,85 +11,69 @@
 
 /*------------------------section includes---------------------------*/
 #include "./application.h"
+#include "MCAL_layer/CCP1/hal_ccp1.h"
+
 /*-------------------------------------------------------------------*/
-void toggleLED_Low(void);
-void toggleLED_High(void);
-void toggleLED2_Low(void);
-void toggleLED2_High(void);
-void toggleLED3_Low(void);
-void toggleLED3_High(void);
-void toggleLED4_Low(void);
-void toggleLED4_High(void);
-
-
+void TIMER_Handeler(void);
 /*----------------------------Global Variables-----------------------*/
+volatile uint16 flag = 0;
 
-led_t led1={.led_status=LOW,.pin=PIN0,.port_name=PORTD_INDEX};
-led_t led2={.led_status=LOW,.pin=PIN1,.port_name=PORTD_INDEX};
-led_t led3={.led_status=LOW,.pin=PIN2,.port_name=PORTD_INDEX};
-led_t led4={.led_status=LOW,.pin=PIN3,.port_name=PORTD_INDEX};
+timer2_t tmr2 =
+    {
+        .Timer2_interruptHandeler = NULL,
+        .postscaler = T2_POSTSCALER_1,
+        .prescaler = T2_PRESCALER_1,
+        .priority = INTERRUPT_HIGH_PRIORITY,
+        .tiemr2_preload = 0};
 
-interrupt_RBx_t int0={.pf=toggleLED_Low,.pf2=toggleLED_High,.priority=INTERRUPT_HIGH_PRIORITY,.mcu_pin.pin=PIN4,.mcu_pin.port=PORTB_INDEX,.mcu_pin.logic=LOW,.mcu_pin.direction=INPUT};
-interrupt_RBx_t int1={.pf=toggleLED2_Low,.pf2=toggleLED2_High,.priority=INTERRUPT_HIGH_PRIORITY,.mcu_pin.pin=PIN5,.mcu_pin.port=PORTB_INDEX,.mcu_pin.logic=LOW,.mcu_pin.direction=INPUT};
-interrupt_RBx_t int2={.pf=toggleLED3_Low,.pf2=toggleLED3_High,.priority=INTERRUPT_HIGH_PRIORITY,.mcu_pin.pin=PIN6,.mcu_pin.port=PORTB_INDEX,.mcu_pin.logic=LOW,.mcu_pin.direction=INPUT};
-interrupt_RBx_t int3={.pf=toggleLED4_Low,.pf2=toggleLED4_High,.priority=INTERRUPT_HIGH_PRIORITY,.mcu_pin.pin=PIN7,.mcu_pin.port=PORTB_INDEX,.mcu_pin.logic=LOW,.mcu_pin.direction=INPUT};
+ccp_t ccp1_obj = {
+    .ccp_inst = CCP1_INST,
+    .CCP_InterruptHandler = NULL,
+    .priority = INTERRUPT_HIGH_PRIORITY,
+
+    .ccp_mode = CCP_PWM_MODE_SELECTED,
+    .PWM_Freq = 20000,
+    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
+    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
+    .ccp_mode_variant = CCP_PWM_MODE,
+};
+
+ccp_t ccp2_obj = {
+    .ccp_inst = CCP2_INST,
+    .CCP_InterruptHandler = NULL,
+    .priority = INTERRUPT_HIGH_PRIORITY,
+
+    .ccp_mode = CCP_PWM_MODE_SELECTED,
+    .PWM_Freq = 20000,
+    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
+    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
+    .ccp_mode_variant = CCP_PWM_MODE,
+};
 /*-------------------------------------------------------------------*/
-Std_ReturnType ret=E_OK;
+Std_ReturnType ret = E_OK;
 int main()
 {
+  ret = CCP_Init(&ccp1_obj);
+  ret = CCP_PWM_Set_Duty(&ccp1_obj, 50);
+  ret = CCP_PWM_Start(&ccp1_obj);
 
-  
-  ret=interrupt_RBx_Init(&int0);
-  ret=interrupt_RBx_Init(&int1);
-  ret=interrupt_RBx_Init(&int2);
-  ret=interrupt_RBx_Init(&int3);
+  ret = CCP_Init(&ccp2_obj);
+  ret = CCP_PWM_Set_Duty(&ccp2_obj, 75);
+  ret = CCP_PWM_Start(&ccp2_obj);
 
-  
-  ret=led_initalize(&led1);
-  ret=led_initalize(&led2);
-  ret=led_initalize(&led3);
-  ret=led_initalize(&led4);
-
+  ret = timer2_Intit(&tmr2);
   while (1)
   {
-
+    // for (int i = 0; i < 100; i += 5)
+    // {
+    //   __delay_ms(5);
+    //   ret = CCP_PWM_Set_Duty(&ccp, i);
+    // }
   }
   return (EXIT_SUCCESS);
 }
 
-
-
-void toggleLED_Low(void)
+void TIMER_Handeler(void)
 {
-  ret= led_turn_off(&led1);
-}
-void toggleLED_High(void)
-{
-  ret= led_turn_on(&led1);
-}
-
-void toggleLED2_Low(void)
-{
-  ret= led_turn_off(&led2);
-}
-void toggleLED2_High(void)
-{
-  ret= led_turn_on(&led2);
-}
-void toggleLED3_Low(void)
-{
-  ret= led_turn_off(&led3);
-}
-void toggleLED3_High(void)
-{
-  ret= led_turn_on(&led3);
-}
-
-void toggleLED4_Low(void)
-{
-  ret= led_turn_off(&led4);
-}
-void toggleLED4_High(void)
-{
-  ret= led_turn_on(&led4);
+  flag++;
 }

@@ -10,15 +10,11 @@
 
 
 
-/* section includes*/
+/*-------------------------------------section includes---------------------------------------*/
 #include <xc.h>
-
-/* MACRO Declarations */
-
-/* MACRO function declarations */
-
-/* Data types*/
-
-/*function declarations */
+/*---------------------------------------MACRO Declarations-----------------------------------*/
+/*---------------------------------------MACRO function declarations--------------------------*/
+/*---------------------------------------Data types-------------------------------------------*/
+/*---------------------------------------function declarations--------------------------------*/
 #endif	/* COMPILER_H */
 

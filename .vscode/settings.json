@@ -1,8 +1,14 @@
 {
   "files.associations": {
-    "ecu_lcd.h": "c",
-    "hal_gpio.h": "c",
+    "mcal_internal_interrupt.h": "c",
+    "application.h": "c",
+    "hal_timer1.h": "c",
+    "mcal_std_types.h": "c",
+    "mcal_interrupt_gen_cfg.h": "c",
+    "hal_timer3.h": "c",
     "mcal_interrupt_cfg.h": "c",
-    "mcal_std_types.h": "c"
+    "hal_timer2.h": "c",
+    "hal_ccp1.h": "c",
+    "hal_ccp.h": "c"
   }
 }

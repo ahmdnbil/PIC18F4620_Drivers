@@ -1,19 +1,24 @@
-/* 
- * File:   mcal_std_types.h
- * Author: User
- *
- * Created on October 11, 2023, 9:19 PM
+/**
+ * @file mcal_std_types.h
+ * @author Ahmed Nabil (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2023-11-17
+ * 
+ * @copyright Copyright (c) 2023
+ * 
  */
 
 #ifndef MCAL_STD_TYPES_H
 #define	MCAL_STD_TYPES_H
 
 
-/***********************Section includes*********************************/
+/*-------------------------------------section includes---------------------------------------*/
 #include "./std_libraries.h"
+#include "./mem_map.h"
 #include "./compiler.h"
 
-/***********************MACRO declarations*******************************/
+/*---------------------------------------MACRO Declarations-----------------------------------*/
 
 #define STD_HIGH   0x01
 #define STD_LOW    0x00
@@ -27,20 +32,9 @@
 #define E_OK     (Std_ReturnType)0x01
 #define E_NOT_OK (Std_ReturnType)0x00
 
-/***********************MACRO Functions**********************************/
-#define HWRREG8(_X)  *((uint8 volatile*)_X)
-
-/***********************Data types***************************************/
-typedef unsigned char  uint8;
-typedef unsigned short uint16;
-typedef unsigned int   uint32;
-typedef signed char    sint8;
-typedef signed short   sint16;
-typedef signed int     sint32;
-
-typedef uint8 Std_ReturnType;
-
-/***********************function declarations****************************/
+/*---------------------------------------MACRO function declarations--------------------------*/
+/*---------------------------------------Data types-------------------------------------------*/
+/*---------------------------------------function declarations--------------------------------*/
 #endif	/* MCAL_STD_TYPES_H */
 
 

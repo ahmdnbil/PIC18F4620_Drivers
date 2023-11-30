@@ -18,6 +18,8 @@ static Std_ReturnType lcd_send_8bits(const lcd_8bit_t *lcd, uint8 _command_data)
 static Std_ReturnType lcd_8bit_send_enable(const lcd_8bit_t *lcd);
 static Std_ReturnType lcd_8bit_set_cursor(const lcd_8bit_t *lcd, uint8 row, uint8 col);
 static Std_ReturnType lcd_4bit_set_cursor(const lcd_4bit_t *lcd, uint8 row, uint8 col);
+static void convertNumberToString(uint32 value, uint8 *str);
+
 
 /*---------------------------Function Definition-------------------------------------*/
 
@@ -175,6 +177,36 @@ Std_ReturnType lcd_4bit_send_custom_char(const lcd_4bit_t *lcd, uint8 row, uint8
     return ret;
 }
 
+Std_ReturnType lcd_4bit_send_number(const lcd_4bit_t * _lcd,const uint8 * str,uint32 number)
+{
+    Std_ReturnType ret=E_OK;
+    if(NULL == _lcd)
+    {
+        ret=E_NOT_OK;
+    }
+    else
+    {
+        convertNumberToString(number,str);
+        ret=lcd_4bit_send_string(_lcd,str);
+    }
+    return ret;
+}
+
+Std_ReturnType lcd_4bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number)
+{
+    Std_ReturnType ret=E_OK;
+    if(NULL == _lcd)
+    {
+        ret=E_NOT_OK;
+    }
+    else
+    {
+        convertNumberToString(number,str);
+        ret=lcd_4bit_send_string_pos(_lcd,row,col,str);
+    }
+    return ret;
+}
+
 /*---------------------------8bit functions-----------------------------------*/
 
 Std_ReturnType lcd_8bit_initalize(const lcd_8bit_t *lcd)
@@ -328,7 +360,38 @@ Std_ReturnType lcd_8bit_send_custom_char(const lcd_8bit_t *lcd, uint8 row, uint8
     return ret;
 }
 
-void convertNumberToString(uint32 value, uint8 *str)
+Std_ReturnType lcd_8bit_send_number(const lcd_8bit_t * _lcd,const uint8 * str,uint32 number)
+{
+    Std_ReturnType ret=E_OK;
+    if(NULL == _lcd)
+    {
+        ret=E_NOT_OK;
+    }
+    else
+    {
+        convertNumberToString(number,str);
+        ret=lcd_8bit_send_string(_lcd,str);
+    }
+    return ret;
+}
+
+Std_ReturnType lcd_8bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number)
+{
+    Std_ReturnType ret=E_OK;
+    if(NULL == _lcd)
+    {
+        ret=E_NOT_OK;
+    }
+    else
+    {
+        convertNumberToString(number,str);
+        ret=lcd_8bit_send_string_pos(_lcd,row,col,str);
+    }
+    return ret;
+}
+
+/*---------------------------------------helper functions------------------------------------------*/
+static void convertNumberToString(uint32 value, uint8 *str)
 {
     uint8 rest, counter = 0;
     uint32 reverseNumber = 1;

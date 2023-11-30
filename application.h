@@ -17,6 +17,13 @@
 
 #include "./ECU_layer/ecu_layer_init.h"
 #include "./MCAL_layer/interrupt/mcal_external_interrupt.h"
+#include "./MCAL_layer/EEPROM/hal_eeprom.h"
+#include "./MCAL_layer/ADC/hal_adc.h"
+#include "./MCAL_layer/TIMER0/hal_timer0.h"
+#include "./MCAL_layer/TIMER1/hal_timer1.h"
+#include "./MCAL_layer/TIMER2/hal_timer2.h"
+#include "./MCAL_layer/TIMER3/hal_timer3.h"
+#include "./MCAL_layer/CCP/hal_ccp.h"
 /* MACRO Declarations */
 #define _XTAL_FREQ 4000000UL
 /* MACRO function declarations */

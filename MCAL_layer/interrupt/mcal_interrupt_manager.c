@@ -107,6 +107,37 @@ void __interrupt() InterruptManagerHigh(void)
         RB7_ISR(0);
         RB7_enter = 1;
     }
+
     /*--------------------------------------------------------------------------------*/
+    else if ((INTERRUPT_ENABLE == PIE1bits.ADIE) && (INTERRUPT_OCCUR == PIR1bits.ADIF))
+    {
+#if ADC_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        ADC_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == INTCONbits.T0IE) && (INTERRUPT_OCCUR == INTCONbits.T0IF))
+    {
+#if TIMER0_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        TIMER0_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE1bits.TMR1IE) && (INTERRUPT_OCCUR == PIR1bits.TMR1IF))
+    {
+#if TIMER1_OVF_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        TIMER1_OVF_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE1bits.TMR2IE) && (INTERRUPT_OCCUR == PIR1bits.TMR2IF))
+    {
+#if TIMER2_COMP_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        TIMER2_COMP_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE2bits.TMR3IE) && (INTERRUPT_OCCUR == PIR2bits.TMR3IF))
+    {
+#if TIMER3_OVF_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        TIMER3_OVF_ISR();
+#endif
+    }
 }
 #endif

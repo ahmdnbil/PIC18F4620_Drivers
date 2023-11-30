@@ -24,4 +24,11 @@ void RB4_ISR(uint8 RB4_Int);
 void RB5_ISR(uint8 RB5_Int);
 void RB6_ISR(uint8 RB6_Int);
 void RB7_ISR(uint8 RB7_Int);
+
+void ADC_ISR();
+void TIMER0_ISR(void);
+void TIMER1_OVF_ISR(void);
+void TIMER2_COMP_ISR(void);
+void TIMER3_OVF_ISR(void);
+
 #endif /* MCAL_INTERRUPT_MANAGER_H */

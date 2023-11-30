@@ -28,26 +28,6 @@
 #define TOGGLE_BIT(reg,bitNo) (reg^=(BIT_MASK<<bitNo))
 #define READ_BIT(reg,bitNo)   (reg >> bitNo) & BIT_MASK
 /***********************MACRO declarations*******************************/
-#define TRISE HWRREG8(0xF96)
-#define TRISD HWRREG8(0xF95)
-#define TRISC HWRREG8(0xF94)
-#define TRISB HWRREG8(0xF93)
-#define TRISA HWRREG8(0xF92)
-
-#define LATE  HWRREG8(0xF8D)
-#define LATD  HWRREG8(0xF8C)
-#define LATC  HWRREG8(0xF8B)
-#define LATB  HWRREG8(0xF8A)
-#define LATA  HWRREG8(0xF89)
-
-#define PORTE HWRREG8(0xF84)
-#define PORTD HWRREG8(0xF83)
-#define PORTC HWRREG8(0xF82)
-#define PORTB HWRREG8(0xF81)
-#define PORTA HWRREG8(0xF80)
-
-
-
 #define BIT_MASK                (uint8)0x01
 #define PORT_MASK               (uint8)0xFF
 #define PORT_PIN_MAX_NUMBER     8

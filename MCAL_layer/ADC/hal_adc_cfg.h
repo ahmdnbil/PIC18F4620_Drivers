@@ -1,0 +1,22 @@
+/**
+ * @file hal_adc_cfg.h
+ * @author Ahmed Nabil (you@domain.com)
+ * @brief
+ * @version 0.1
+ * @date 2023-11-19
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
+#ifndef HAL_ADC_CFG_H
+#define HAL_ADC_CFG_H
+
+/*-------------------------------------section includes---------------------------------------*/
+/*---------------------------------------MACRO Declarations-----------------------------------*/
+
+/*---------------------------------------MACRO function declarations--------------------------*/
+/*---------------------------------------Data types-------------------------------------------*/
+/*---------------------------------------function declarations--------------------------------*/
+
+#endif /* HAL_ADC_CFG_H */

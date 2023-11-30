@@ -127,6 +127,27 @@ Std_ReturnType lcd_4bit_send_string_pos(const lcd_4bit_t* lcd,uint8 row,uint8 co
  */
 Std_ReturnType lcd_4bit_send_custom_char(const lcd_4bit_t* lcd,uint8 row,uint8 col,const uint8 _chr[],uint8 mem_pos);
 
+/**
+ * @brief 
+ * 
+ * @param _lcd 
+ * @param str 
+ * @param number 
+ * @return Std_ReturnType 
+ */
+Std_ReturnType lcd_4bit_send_number(const lcd_4bit_t * _lcd,const uint8 * str,uint32 number);
+/**
+ * @brief 
+ * 
+ * @param _lcd 
+ * @param str 
+ * @param row 
+ * @param col 
+ * @param number 
+ * @return Std_ReturnType 
+ */
+Std_ReturnType lcd_4bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number);
+
 /*--------------------------8bit declarations-----------------------------------------------*/
 /**
  * @brief 
@@ -191,6 +212,26 @@ Std_ReturnType lcd_8bit_send_string_pos(const lcd_8bit_t* lcd,uint8 row,uint8 co
  */
 Std_ReturnType lcd_8bit_send_custom_char(const lcd_8bit_t* lcd,uint8 row,uint8 col,const uint8 _chr[],uint8 mem_pos);
 
-void convertNumberToString(uint32 value, uint8 *str);
+/**
+ * @brief 
+ * 
+ * @param _lcd 
+ * @param str 
+ * @param number 
+ * @return Std_ReturnType 
+ */
+Std_ReturnType lcd_8bit_send_number(const lcd_8bit_t * _lcd,const uint8 * str,uint32 number);
+
+/**
+ * @brief 
+ * 
+ * @param _lcd 
+ * @param str 
+ * @param row 
+ * @param col 
+ * @param number 
+ * @return Std_ReturnType 
+ */
+Std_ReturnType lcd_8bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number);
 #endif	/* ECU_LCD_H */
 

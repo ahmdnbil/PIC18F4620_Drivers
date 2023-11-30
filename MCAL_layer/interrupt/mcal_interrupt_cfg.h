@@ -14,18 +14,15 @@
 /*-------------------------------------section includes---------------------------------------*/
 #include "./../proc/pic18f4620.h"
 #include "./../mcal_std_types.h"
-#include "./../compiler.h"
-#include "./../std_libraries.h"
 #include "./mcal_interrupt_gen_cfg.h"
 #include "./../GPIO/hal_gpio.h"
 
 /*---------------------------------------MACRO Declarations-----------------------------------*/
 #define INTERRUPT_ENABLE 1U
 #define INTERRUPT_DISABLE 0U
+
 #define INTERRUPT_OCCUR 1U
 #define INTERRUPT_NOT_OCCUR 0U
-#define INTERRUPT_PRIORITY_ENABLE 1
-#define INTERRUPT_PRIORITY_DISABLE 0
 
 /*---------------------------------------MACRO function declarations--------------------------*/
 

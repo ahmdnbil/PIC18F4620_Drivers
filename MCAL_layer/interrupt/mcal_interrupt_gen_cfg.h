@@ -18,9 +18,34 @@
 #define  INTERRUPT_FEATURE_ENABLE 1U
 #define  INTERRUPT_FEATURE_DISABLE 0U
 
-#define INTERRUPT_PRIORITY_LEVELS_ENABLE INTERRUPT_FEATURE_DISABLE
+#define INTERRUPT_PRIORITY_ENABLE 1
+#define INTERRUPT_PRIORITY_DISABLE 0
+
+#define INTERRUPT_PRIORITY_LEVELS_ENABLE INTERRUPT_PRIORITY_DISABLE
+
+/*---------external interrupts configuration-----*/
 #define EXTERNAL_INTERRUPT_INTx_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
 #define EXTERNAL_INTERRUPT_OnChange_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+/*-----------------------------------------------*/
+
+/*---------internal interrupts configuration-----*/
+/*ADC interrupt*/
+#define ADC_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_DISABLE
+/*Timer0 OVF interrupt*/
+#define TIMER0_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+/*Timer1 OVF interrupt*/
+#define TIMER1_OVF_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+/*Timer2 COMP interrupt*/
+#define TIMER2_COMP_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_DISABLE
+/*Timer3 OVF interrupt*/
+#define TIMER3_OVF_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+/*CCP1 interrupt*/
+#define CCP1_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+/*CCP2 interrupt*/
+#define CCP2_INTERRUPT_FEATURE_ENABLE INTERRUPT_FEATURE_ENABLE
+
+/*-----------------------------------------------*/
+
 /*---------------------------------------MACRO function declarations--------------------------*/
 /*---------------------------------------Data types-------------------------------------------*/
 /*---------------------------------------function declarations--------------------------------*/
