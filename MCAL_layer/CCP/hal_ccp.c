@@ -15,6 +15,7 @@
 static void (*CCP1_OVF_INTERRUPT_HANDELER)(void) = NULL;
 static void (*CCP2_OVF_INTERRUPT_HANDELER)(void) = NULL;
 static inline void ccp_set_priority(const ccp_t *_ccp);
+static void ccp_capture_mode_timer_select(const ccp_t *_ccp);
 /*----------------------------------------------------------------------------------------------*/
 
 Std_ReturnType CCP_Init(const ccp_t *_ccp_obj)
@@ -47,6 +48,7 @@ Std_ReturnType CCP_Init(const ccp_t *_ccp_obj)
 
         if (CCP_CAPTURE_MODE_SELECTED == _ccp_obj->ccp_mode)
         {
+            ccp_capture_mode_timer_select(&_ccp_obj);
             switch (_ccp_obj->ccp_inst)
             {
 
@@ -91,6 +93,7 @@ Std_ReturnType CCP_Init(const ccp_t *_ccp_obj)
         }
         else if (CCP_COMPARE_MODE_SELECTED == _ccp_obj->ccp_mode)
         {
+            ccp_capture_mode_timer_select(&_ccp_obj);
             switch (_ccp_obj->ccp_inst)
             {
 
@@ -149,7 +152,7 @@ Std_ReturnType CCP_Init(const ccp_t *_ccp_obj)
             case CCP2_INST:
                 TRISCbits.RC1 = OUTPUT;
             }
-            PR2 = (uint8)((XTAL_FREQ / (_ccp_obj->PWM_Freq * 4.0 * _ccp_obj->timer2_prescaler_value * _ccp_obj->timer2_postscaler_value)) - 1);
+            PR2 = (uint8)((_XTAL_FREQ / (_ccp_obj->PWM_Freq * 4.0 * _ccp_obj->timer2_prescaler_value * _ccp_obj->timer2_postscaler_value)) - 1);
         }
         else
         {
@@ -347,12 +350,31 @@ Std_ReturnType CCP_isCompareComplete(const ccp_t *_ccp_obj, uint8 *_compare_stat
     }
     return ret;
 }
-Std_ReturnType CCP_Compare_Mode_Set_Value(uint16 compare_value)
+Std_ReturnType CCP_Compare_Mode_Set_Value(const ccp_t *_ccp_obj, uint16 compare_value)
 {
     Std_ReturnType ret = E_OK;
+    if (NULL == _ccp_obj)
+    {
+        ret = E_NOT_OK;
+    }
+    else
+    {
+        switch (_ccp_obj->ccp_inst)
+        {
+        case CCP1_INST:
+            CCPR1L = (uint8)(compare_value);
+            CCPR1H = compare_value >> 8;
+            break;
 
-    TMR3H = compare_value >> 8;
-    TMR3L = (uint8)(compare_value);
+        case CCP2_INST:
+            CCPR2L = (uint8)(compare_value);
+            CCPR2H = compare_value >> 8;
+            break;
+
+        default:
+            break;
+        }
+    }
 
     return ret;
 }
@@ -496,4 +518,28 @@ void CCP2_ISR()
     }
 }
 #endif
+
+static void ccp_capture_mode_timer_select(const ccp_t *_ccp)
+{
+    switch (_ccp->ccp_capture_timer)
+    {
+    case CCP1_CCP2_T3:
+        T3CONbits.T3CCP2 = 1;
+        T3CONbits.T3CCP1 = 0;
+        break;
+
+    case CCP1_T1_CCP2_T3:
+        T3CONbits.T3CCP2 = 0;
+        T3CONbits.T3CCP1 = 1;
+        break;
+
+    case CCP1_CCP2_T1:
+        T3CONbits.T3CCP2 = 0;
+        T3CONbits.T3CCP1 = 0;
+        break;
+
+    default:
+        break;
+    }
+}
 /*----------------------------------------------------------------------------------------------*/

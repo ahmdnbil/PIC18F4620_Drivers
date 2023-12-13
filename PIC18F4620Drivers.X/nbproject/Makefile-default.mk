@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../ECU_layer/BUTTON/ecu_button.c ../ECU_layer/DCmotor/ecu_dcmotor.c ../ECU_layer/KEYPAD/ecu_keypad.c ../ECU_layer/LCD/ecu_lcd.c ../ECU_layer/LED/ecu_led.c ../ECU_layer/RELAY/ecu_relay.c ../ECU_layer/SSD/ecu_ssd.c ../ECU_layer/ecu_layer_init.c ../MCAL_layer/ADC/hal_adc.c ../MCAL_layer/EEPROM/hal_eeprom.c ../MCAL_layer/GPIO/hal_gpio.c ../MCAL_layer/interrupt/mcal_external_interrupt.c ../MCAL_layer/interrupt/mcal_internal_interrupt.c ../MCAL_layer/interrupt/mcal_interrupt_manager.c ../MCAL_layer/TIMER0/hal_timer0.c ../MCAL_layer/TIMER1/hal_timer1.c ../MCAL_layer/TIMER2/hal_timer2.c ../MCAL_layer/TIMER3/hal_timer3.c ../MCAL_layer/device_config.c ../application.c ../MCAL_layer/CCP/hal_ccp.c
+SOURCEFILES_QUOTED_IF_SPACED=../ECU_layer/BUTTON/ecu_button.c ../ECU_layer/DCmotor/ecu_dcmotor.c ../ECU_layer/KEYPAD/ecu_keypad.c ../ECU_layer/LCD/ecu_lcd.c ../ECU_layer/LED/ecu_led.c ../ECU_layer/RELAY/ecu_relay.c ../ECU_layer/SSD/ecu_ssd.c ../ECU_layer/ecu_layer_init.c ../MCAL_layer/ADC/hal_adc.c ../MCAL_layer/CCP/hal_ccp.c ../MCAL_layer/EEPROM/hal_eeprom.c ../MCAL_layer/GPIO/hal_gpio.c ../MCAL_layer/I2C/hal_i2c.c ../MCAL_layer/interrupt/mcal_external_interrupt.c ../MCAL_layer/interrupt/mcal_internal_interrupt.c ../MCAL_layer/interrupt/mcal_interrupt_manager.c ../MCAL_layer/TIMER0/hal_timer0.c ../MCAL_layer/TIMER1/hal_timer1.c ../MCAL_layer/TIMER2/hal_timer2.c ../MCAL_layer/TIMER3/hal_timer3.c ../MCAL_layer/USART/hal_usart.c ../MCAL_layer/device_config.c ../application.c ../MCAL_layer/SPI/hal_spi.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/179001881/ecu_button.p1 ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1 ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1 ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1 ${OBJECTDIR}/_ext/638820182/ecu_led.p1 ${OBJECTDIR}/_ext/268577508/ecu_relay.p1 ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1 ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1 ${OBJECTDIR}/_ext/1308542067/hal_adc.p1 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1 ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1 ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1 ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1 ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1 ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1 ${OBJECTDIR}/_ext/1741292670/device_config.p1 ${OBJECTDIR}/_ext/1472/application.p1 ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/179001881/ecu_button.p1.d ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1.d ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1.d ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1.d ${OBJECTDIR}/_ext/638820182/ecu_led.p1.d ${OBJECTDIR}/_ext/268577508/ecu_relay.p1.d ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1.d ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1.d ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1.d ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1.d ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1.d ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1.d ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1.d ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d ${OBJECTDIR}/_ext/1741292670/device_config.p1.d ${OBJECTDIR}/_ext/1472/application.p1.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/179001881/ecu_button.p1 ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1 ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1 ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1 ${OBJECTDIR}/_ext/638820182/ecu_led.p1 ${OBJECTDIR}/_ext/268577508/ecu_relay.p1 ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1 ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1 ${OBJECTDIR}/_ext/1308542067/hal_adc.p1 ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1 ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1 ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1 ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1 ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1 ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1 ${OBJECTDIR}/_ext/897573352/hal_usart.p1 ${OBJECTDIR}/_ext/1741292670/device_config.p1 ${OBJECTDIR}/_ext/1472/application.p1 ${OBJECTDIR}/_ext/1308559743/hal_spi.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/179001881/ecu_button.p1.d ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1.d ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1.d ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1.d ${OBJECTDIR}/_ext/638820182/ecu_led.p1.d ${OBJECTDIR}/_ext/268577508/ecu_relay.p1.d ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1.d ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1.d ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1.d ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1.d ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1.d ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1.d ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1.d ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1.d ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d ${OBJECTDIR}/_ext/1741292670/device_config.p1.d ${OBJECTDIR}/_ext/1472/application.p1.d ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/179001881/ecu_button.p1 ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1 ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1 ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1 ${OBJECTDIR}/_ext/638820182/ecu_led.p1 ${OBJECTDIR}/_ext/268577508/ecu_relay.p1 ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1 ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1 ${OBJECTDIR}/_ext/1308542067/hal_adc.p1 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1 ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1 ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1 ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1 ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1 ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1 ${OBJECTDIR}/_ext/1741292670/device_config.p1 ${OBJECTDIR}/_ext/1472/application.p1 ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1
+OBJECTFILES=${OBJECTDIR}/_ext/179001881/ecu_button.p1 ${OBJECTDIR}/_ext/29520705/ecu_dcmotor.p1 ${OBJECTDIR}/_ext/64028809/ecu_keypad.p1 ${OBJECTDIR}/_ext/638820120/ecu_lcd.p1 ${OBJECTDIR}/_ext/638820182/ecu_led.p1 ${OBJECTDIR}/_ext/268577508/ecu_relay.p1 ${OBJECTDIR}/_ext/638827343/ecu_ssd.p1 ${OBJECTDIR}/_ext/1536043258/ecu_layer_init.p1 ${OBJECTDIR}/_ext/1308542067/hal_adc.p1 ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1 ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_internal_interrupt.p1 ${OBJECTDIR}/_ext/1758589974/mcal_interrupt_manager.p1 ${OBJECTDIR}/_ext/2092489512/hal_timer0.p1 ${OBJECTDIR}/_ext/2092489511/hal_timer1.p1 ${OBJECTDIR}/_ext/2092489510/hal_timer2.p1 ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1 ${OBJECTDIR}/_ext/897573352/hal_usart.p1 ${OBJECTDIR}/_ext/1741292670/device_config.p1 ${OBJECTDIR}/_ext/1472/application.p1 ${OBJECTDIR}/_ext/1308559743/hal_spi.p1
 
 # Source Files
-SOURCEFILES=../ECU_layer/BUTTON/ecu_button.c ../ECU_layer/DCmotor/ecu_dcmotor.c ../ECU_layer/KEYPAD/ecu_keypad.c ../ECU_layer/LCD/ecu_lcd.c ../ECU_layer/LED/ecu_led.c ../ECU_layer/RELAY/ecu_relay.c ../ECU_layer/SSD/ecu_ssd.c ../ECU_layer/ecu_layer_init.c ../MCAL_layer/ADC/hal_adc.c ../MCAL_layer/EEPROM/hal_eeprom.c ../MCAL_layer/GPIO/hal_gpio.c ../MCAL_layer/interrupt/mcal_external_interrupt.c ../MCAL_layer/interrupt/mcal_internal_interrupt.c ../MCAL_layer/interrupt/mcal_interrupt_manager.c ../MCAL_layer/TIMER0/hal_timer0.c ../MCAL_layer/TIMER1/hal_timer1.c ../MCAL_layer/TIMER2/hal_timer2.c ../MCAL_layer/TIMER3/hal_timer3.c ../MCAL_layer/device_config.c ../application.c ../MCAL_layer/CCP/hal_ccp.c
+SOURCEFILES=../ECU_layer/BUTTON/ecu_button.c ../ECU_layer/DCmotor/ecu_dcmotor.c ../ECU_layer/KEYPAD/ecu_keypad.c ../ECU_layer/LCD/ecu_lcd.c ../ECU_layer/LED/ecu_led.c ../ECU_layer/RELAY/ecu_relay.c ../ECU_layer/SSD/ecu_ssd.c ../ECU_layer/ecu_layer_init.c ../MCAL_layer/ADC/hal_adc.c ../MCAL_layer/CCP/hal_ccp.c ../MCAL_layer/EEPROM/hal_eeprom.c ../MCAL_layer/GPIO/hal_gpio.c ../MCAL_layer/I2C/hal_i2c.c ../MCAL_layer/interrupt/mcal_external_interrupt.c ../MCAL_layer/interrupt/mcal_internal_interrupt.c ../MCAL_layer/interrupt/mcal_interrupt_manager.c ../MCAL_layer/TIMER0/hal_timer0.c ../MCAL_layer/TIMER1/hal_timer1.c ../MCAL_layer/TIMER2/hal_timer2.c ../MCAL_layer/TIMER3/hal_timer3.c ../MCAL_layer/USART/hal_usart.c ../MCAL_layer/device_config.c ../application.c ../MCAL_layer/SPI/hal_spi.c
 
 
 
@@ -160,6 +160,14 @@ ${OBJECTDIR}/_ext/1308542067/hal_adc.p1: ../MCAL_layer/ADC/hal_adc.c  nbproject/
 	@-${MV} ${OBJECTDIR}/_ext/1308542067/hal_adc.d ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1308543971/hal_ccp.p1: ../MCAL_layer/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308543971" 
+	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ../MCAL_layer/CCP/hal_ccp.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308543971/hal_ccp.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1: ../MCAL_layer/EEPROM/hal_eeprom.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1769448237" 
 	@${RM} ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1.d 
@@ -175,6 +183,14 @@ ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1: ../MCAL_layer/GPIO/hal_gpio.c  nbproje
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ../MCAL_layer/GPIO/hal_gpio.c 
 	@-${MV} ${OBJECTDIR}/_ext/1910288956/hal_gpio.d ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1308549197/hal_i2c.p1: ../MCAL_layer/I2C/hal_i2c.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308549197" 
+	@${RM} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 ../MCAL_layer/I2C/hal_i2c.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308549197/hal_i2c.d ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1: ../MCAL_layer/interrupt/mcal_external_interrupt.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1758589974" 
@@ -232,6 +248,14 @@ ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1: ../MCAL_layer/TIMER3/hal_timer3.c  n
 	@-${MV} ${OBJECTDIR}/_ext/2092489509/hal_timer3.d ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/897573352/hal_usart.p1: ../MCAL_layer/USART/hal_usart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/897573352" 
+	@${RM} ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/897573352/hal_usart.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/897573352/hal_usart.p1 ../MCAL_layer/USART/hal_usart.c 
+	@-${MV} ${OBJECTDIR}/_ext/897573352/hal_usart.d ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/_ext/1741292670/device_config.p1: ../MCAL_layer/device_config.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1741292670" 
 	@${RM} ${OBJECTDIR}/_ext/1741292670/device_config.p1.d 
@@ -248,13 +272,13 @@ ${OBJECTDIR}/_ext/1472/application.p1: ../application.c  nbproject/Makefile-${CN
 	@-${MV} ${OBJECTDIR}/_ext/1472/application.d ${OBJECTDIR}/_ext/1472/application.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1472/application.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1308543971/hal_ccp.p1: ../MCAL_layer/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1308543971" 
-	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ../MCAL_layer/CCP/hal_ccp.c 
-	@-${MV} ${OBJECTDIR}/_ext/1308543971/hal_ccp.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1308559743/hal_spi.p1: ../MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308559743" 
+	@${RM} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308559743/hal_spi.p1 ../MCAL_layer/SPI/hal_spi.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308559743/hal_spi.d ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/_ext/179001881/ecu_button.p1: ../ECU_layer/BUTTON/ecu_button.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -329,6 +353,14 @@ ${OBJECTDIR}/_ext/1308542067/hal_adc.p1: ../MCAL_layer/ADC/hal_adc.c  nbproject/
 	@-${MV} ${OBJECTDIR}/_ext/1308542067/hal_adc.d ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1308542067/hal_adc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1308543971/hal_ccp.p1: ../MCAL_layer/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308543971" 
+	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ../MCAL_layer/CCP/hal_ccp.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308543971/hal_ccp.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1: ../MCAL_layer/EEPROM/hal_eeprom.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1769448237" 
 	@${RM} ${OBJECTDIR}/_ext/1769448237/hal_eeprom.p1.d 
@@ -344,6 +376,14 @@ ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1: ../MCAL_layer/GPIO/hal_gpio.c  nbproje
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1 ../MCAL_layer/GPIO/hal_gpio.c 
 	@-${MV} ${OBJECTDIR}/_ext/1910288956/hal_gpio.d ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1910288956/hal_gpio.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1308549197/hal_i2c.p1: ../MCAL_layer/I2C/hal_i2c.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308549197" 
+	@${RM} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1 ../MCAL_layer/I2C/hal_i2c.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308549197/hal_i2c.d ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308549197/hal_i2c.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/_ext/1758589974/mcal_external_interrupt.p1: ../MCAL_layer/interrupt/mcal_external_interrupt.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1758589974" 
@@ -401,6 +441,14 @@ ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1: ../MCAL_layer/TIMER3/hal_timer3.c  n
 	@-${MV} ${OBJECTDIR}/_ext/2092489509/hal_timer3.d ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/2092489509/hal_timer3.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/897573352/hal_usart.p1: ../MCAL_layer/USART/hal_usart.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/897573352" 
+	@${RM} ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/897573352/hal_usart.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/897573352/hal_usart.p1 ../MCAL_layer/USART/hal_usart.c 
+	@-${MV} ${OBJECTDIR}/_ext/897573352/hal_usart.d ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/897573352/hal_usart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/_ext/1741292670/device_config.p1: ../MCAL_layer/device_config.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/_ext/1741292670" 
 	@${RM} ${OBJECTDIR}/_ext/1741292670/device_config.p1.d 
@@ -417,13 +465,13 @@ ${OBJECTDIR}/_ext/1472/application.p1: ../application.c  nbproject/Makefile-${CN
 	@-${MV} ${OBJECTDIR}/_ext/1472/application.d ${OBJECTDIR}/_ext/1472/application.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1472/application.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/_ext/1308543971/hal_ccp.p1: ../MCAL_layer/CCP/hal_ccp.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}/_ext/1308543971" 
-	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1 ../MCAL_layer/CCP/hal_ccp.c 
-	@-${MV} ${OBJECTDIR}/_ext/1308543971/hal_ccp.d ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/1308543971/hal_ccp.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1308559743/hal_spi.p1: ../MCAL_layer/SPI/hal_spi.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1308559743" 
+	@${RM} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1308559743/hal_spi.p1 ../MCAL_layer/SPI/hal_spi.c 
+	@-${MV} ${OBJECTDIR}/_ext/1308559743/hal_spi.d ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1308559743/hal_spi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

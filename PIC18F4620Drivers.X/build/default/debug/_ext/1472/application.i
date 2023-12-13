@@ -4490,7 +4490,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 # 17 ".././ECU_layer/./BUTTON/./../../MCAL_layer/GPIO/.././mem_map.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long int uint32;
 typedef signed char sint8;
 typedef signed short sint16;
 typedef signed int sint32;
@@ -5275,7 +5275,7 @@ Std_ReturnType timer2_write_value(const timer2_t *_timer, uint8 value);
 # 50 ".././MCAL_layer/TIMER3/hal_timer3.h"
 typedef enum
 {
-    T3_NO_PRESCALER,
+    T3_PRESCALER_1,
     T3_PRESCALER_2,
     T3_PRESCALER_4,
     T3_PRESCALER_8,
@@ -5319,11 +5319,11 @@ Std_ReturnType timer3_read_value(const timer3_t *_timer, uint16 *value);
 Std_ReturnType timer3_write_value(const timer3_t *_timer, uint16 value);
 # 25 ".././application.h" 2
 
-# 1 ".././MCAL_layer/CCP1/hal_ccp1.h" 1
-# 16 ".././MCAL_layer/CCP1/hal_ccp1.h"
-# 1 ".././MCAL_layer/CCP1/./ccp1_cfg.h" 1
-# 16 ".././MCAL_layer/CCP1/hal_ccp1.h" 2
-# 49 ".././MCAL_layer/CCP1/hal_ccp1.h"
+# 1 "../MCAL_layer/CCP/hal_ccp.h" 1
+# 16 "../MCAL_layer/CCP/hal_ccp.h"
+# 1 "../MCAL_layer/CCP/./ccp_cfg.h" 1
+# 16 "../MCAL_layer/CCP/hal_ccp.h" 2
+# 49 "../MCAL_layer/CCP/hal_ccp.h"
 typedef enum
 {
     CCP_T2_PRESCALER_1 = 1,
@@ -5376,6 +5376,14 @@ typedef enum
     CCP2_INST,
 
 } ccp_inst_t;
+
+typedef enum
+{
+    CCP1_CCP2_T3,
+    CCP1_T1_CCP2_T3,
+    CCP1_CCP2_T1
+
+} ccp_capture_timer_t;
 typedef struct
 {
     ccp_inst_t ccp_inst;
@@ -5383,6 +5391,7 @@ typedef struct
     uint8 ccp_mode_variant;
     void (*CCP_InterruptHandler)(void);
     interrupt_priority_cfg priority;
+    ccp_capture_timer_t ccp_capture_timer;
     uint32 PWM_Freq;
     uint8 timer2_postscaler_value : 4;
     uint8 timer2_prescaler_value : 2;
@@ -5398,7 +5407,7 @@ Std_ReturnType CCP_Capture_mode_read_value(const ccp_t *_ccp_obj, uint16 *captur
 
 
 Std_ReturnType CCP_isCompareComplete(const ccp_t *_ccp_obj, uint8 *_compare_status);
-Std_ReturnType CCP_Compare_Mode_Set_Value(uint16 compare_value);
+Std_ReturnType CCP_Compare_Mode_Set_Value(const ccp_t *_ccp_obj, uint16 compare_value);
 
 
 Std_ReturnType CCP_PWM_Set_Duty(const ccp_t *_ccp_obj, const uint8 _duty);
@@ -5406,6 +5415,127 @@ Std_ReturnType CCP_PWM_Start(const ccp_t *_ccp_obj);
 Std_ReturnType CCP_PWM_Stop(const ccp_t *_ccp_obj);
 # 26 ".././application.h" 2
 
+# 1 ".././MCAL_layer/USART/hal_usart.h" 1
+# 15 ".././MCAL_layer/USART/hal_usart.h"
+# 1 ".././MCAL_layer/USART/./hal_usart_cfg.h" 1
+# 15 ".././MCAL_layer/USART/hal_usart.h" 2
+# 65 ".././MCAL_layer/USART/hal_usart.h"
+typedef enum
+{
+    BAUDRATE_ASYN_8BIT_LOW_SPEED,
+    BAUDRATE_ASYN_8BIT_HIGH_SPEED,
+    BAUDRATE_ASYN_16BIT_LOW_SPEED,
+    BAUDRATE_ASYN_16BIT_HIGH_SPEED,
+    BAUDRATE_SYN_8BIT,
+    BAUDRATE_SYN_16BIT,
+} baudrate_gen_t;
+
+typedef struct
+{
+    uint8 : 6;
+    uint8 usart_tx_enable : 1;
+    uint8 usart_tx_9bit_enable : 1;
+} usart_tx_cfg_t;
+
+typedef struct
+{
+    uint8 : 6;
+    uint8 usart_rx_enable : 1;
+    uint8 usart_rx_9bit_enable : 1;
+} usart_rx_cfg_t;
+
+typedef union
+{
+    struct
+    {
+        uint8 : 6;
+        uint8 usart_ferr : 1;
+        uint8 usart_oerr : 1;
+    };
+    uint8 status;
+} usart_error_status_t;
+
+typedef struct
+{
+    uint32 baudrate;
+    baudrate_gen_t baudrate_gen_cfg;
+    usart_tx_cfg_t usart_tx_cfg;
+    usart_rx_cfg_t usart_rx_cfg;
+    usart_error_status_t error_status;
+
+    interrupt_priority_cfg Tx_interruptPriority;
+    void (*EUSART_TxDefaultInterruptHandler)(void);
+
+    interrupt_priority_cfg Rx_interruptPriority;
+    void (*EUSART_RxDefaultInterruptHandler)(void);
+
+    void (*EUSART_FramingErrorHandler)(void);
+    void (*EUSART_OverrunErrorHandler)(void);
+
+} usart_t;
+
+
+Std_ReturnType EUSART_ASYNC_Init(const usart_t *_usart);
+Std_ReturnType EUSART_DeInit(const usart_t *_usart);
+Std_ReturnType EUSART_ReadByteBlocking(const usart_t *_usart, uint8 *_data);
+Std_ReturnType EUSART_WriteByteBlocking(const usart_t *_usart, uint8 _data);
+Std_ReturnType EUSART_ReadByteNonBlocking(const usart_t *_usart, uint8 *_data);
+Std_ReturnType EUSART_WriteByteNonBlocking(const usart_t *_usart, uint8 _data);
+Std_ReturnType EUSART_SendStringBlocking(const usart_t *_usart, uint8 *_data);
+# 27 ".././application.h" 2
+
+# 1 ".././MCAL_layer/I2C/hal_i2c.h" 1
+# 102 ".././MCAL_layer/I2C/hal_i2c.h"
+typedef struct
+{
+    uint8 i2c_slave_address;
+    uint8 i2c_mode_config;
+    uint8 i2c_mode : 1;
+    uint8 i2c_slew_rate : 1;
+    uint8 i2c_SMBus_control : 1;
+    uint8 i2c_general_call : 1;
+    uint8 i2c_master_rec_mode : 1;
+    uint8 : 3;
+} i2c_cfg_t;
+
+typedef struct
+{
+    uint32 i2c_clk;
+    void (*I2C_Report_Write_Collision)(void);
+    interrupt_priority_cfg I2C_write_collision_interrupt_priority;
+    void (*I2C_Report_Receive_Overflow)(void);
+    void (*I2C_DefaultInterruptHandler)(void);
+    interrupt_priority_cfg I2C_default_interrupt_priority;
+    i2c_cfg_t i2c_config;
+} mssp_i2c_t;
+
+
+Std_ReturnType MSSP_I2C_Init(const mssp_i2c_t *_i2c);
+Std_ReturnType MSSP_I2C_DeInit(const mssp_i2c_t *_i2c);
+Std_ReturnType MSSP_I2C_Master_Send_Start(const mssp_i2c_t *_i2c);
+Std_ReturnType MSSP_I2C_Master_Send_Repeated_Start(const mssp_i2c_t *_i2c);
+Std_ReturnType MSSP_I2C_Master_Send_Stop(const mssp_i2c_t *_i2c);
+Std_ReturnType MSSP_I2C_Master_Write_Blocking(const mssp_i2c_t *_i2c, uint8 data, uint8 *ack);
+Std_ReturnType MSSP_I2C_Read(const mssp_i2c_t *_i2c, uint8 ack, uint8 *data);
+# 28 ".././application.h" 2
+
+# 1 ".././MCAL_layer/SPI/hal_spi.h" 1
+# 73 ".././MCAL_layer/SPI/hal_spi.h"
+typedef struct
+{
+    uint8 spi_mode : 1;
+    uint8 spi_mode_cfg : 4;
+    uint8 master_sample_bit : 1;
+    uint8 spi_transmit_mode : 1;
+    uint8 spi_clk_polarity : 1;
+    pin_config_t ss_pin;
+} spi_t;
+
+Std_ReturnType MSSP_SPI_Init(const spi_t *_spi);
+Std_ReturnType MSSP_SPI_DeInit(const spi_t *_spi);
+Std_ReturnType MSSP_SPI_Send_Data_default_ss_Blocking(const spi_t *_spi, uint8 data, uint8 *receivedData);
+Std_ReturnType MSSP_SPI_Send_Data_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData);
+# 29 ".././application.h" 2
 
 
 
@@ -5419,66 +5549,53 @@ extern lcd_4bit_t lcd_4bit;
 
 
 
-void TIMER_Handeler(void);
-
-volatile uint16 flag = 0;
-
-timer2_t tmr2 =
+Std_ReturnType ret;
+spi_t spi_obj =
     {
-        .Timer2_interruptHandeler = ((void*)0),
-        .postscaler = T2_POSTSCALER_1,
-        .prescaler = T2_PRESCALER_1,
-        .priority = INTERRUPT_HIGH_PRIORITY,
-        .tiemr2_preload = 0};
-
-ccp_t ccp1_obj = {
-    .ccp_inst = CCP1_INST,
-    .CCP_InterruptHandler = ((void*)0),
-    .priority = INTERRUPT_HIGH_PRIORITY,
-
-    .ccp_mode = CCP_PWM_MODE_SELECTED,
-    .PWM_Freq = 20000,
-    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
-    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
-    .ccp_mode_variant = 0x0C,
+        .spi_mode = 0x01,
+        .spi_mode_cfg = 0b0000,
+        .spi_transmit_mode = 0x01,
+        .spi_clk_polarity = 0x00,
+        .master_sample_bit = 0x00,
+        .ss_pin.pin = PIN0,
+        .ss_pin.port = PORTD_INDEX,
+        .ss_pin.direction = OUTPUT,
+        .ss_pin.logic = HIGH,
+};
+pin_config_t _pin2 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN1,
+        .port = PORTD_INDEX,
 };
 
-ccp_t ccp2_obj = {
-    .ccp_inst = CCP2_INST,
-    .CCP_InterruptHandler = ((void*)0),
-    .priority = INTERRUPT_HIGH_PRIORITY,
-
-    .ccp_mode = CCP_PWM_MODE_SELECTED,
-    .PWM_Freq = 20000,
-    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
-    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
-    .ccp_mode_variant = 0x0C,
+pin_config_t _pin3 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN2,
+        .port = PORTD_INDEX,
 };
 
-Std_ReturnType ret = (Std_ReturnType)0x01;
+pin_config_t _pin4 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN3,
+        .port = PORTD_INDEX,
+};
+uint8 receivedData;
+
 int main()
 {
-  ret = CCP_Init(&ccp1_obj);
-  ret = CCP_PWM_Set_Duty(&ccp1_obj, 50);
-  ret = CCP_PWM_Start(&ccp1_obj);
-
-  ret = CCP_Init(&ccp2_obj);
-  ret = CCP_PWM_Set_Duty(&ccp2_obj, 75);
-  ret = CCP_PWM_Start(&ccp2_obj);
-
-  ret = timer2_Intit(&tmr2);
+  ret = MSSP_SPI_Init(&spi_obj);
   while (1)
   {
-
-
-
-
-
+    ret = MSSP_SPI_Send_Data_default_ss_Blocking(&spi_obj, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin2, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin3, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin4, 'a', &receivedData);
   }
   return (0);
-}
-
-void TIMER_Handeler(void)
-{
-  flag++;
 }

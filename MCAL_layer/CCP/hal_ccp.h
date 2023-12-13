@@ -15,6 +15,7 @@
 #include "./../mcal_std_types.h"
 #include "./ccp_cfg.h"
 #include "./../proc/pic18f4620.h"
+#include "./../device_config.h"
 #include "./../GPIO/hal_gpio.h"
 #include "./../interrupt/mcal_internal_interrupt.h"
 
@@ -40,7 +41,6 @@
 #define CCP_COMPARE_NOT_READY 0x00
 #define CCP_COMPARE_READY 0x01
 
-#define XTAL_FREQ 4000000UL
 /*----------------------MACRO Functions-----------------------------*/
 #define CCP1_SET_MODE(_CONFIG) (CCP1CONbits.CCP1M = _CONFIG)
 #define CCP2_SET_MODE(_CONFIG) (CCP2CONbits.CCP2M = _CONFIG)
@@ -98,6 +98,14 @@ typedef enum
     CCP2_INST,
 
 } ccp_inst_t;
+
+typedef enum
+{
+    CCP1_CCP2_T3,
+    CCP1_T1_CCP2_T3,
+    CCP1_CCP2_T1
+
+} ccp_capture_timer_t;
 typedef struct
 {
     ccp_inst_t ccp_inst;
@@ -105,6 +113,7 @@ typedef struct
     uint8 ccp_mode_variant;
     void (*CCP_InterruptHandler)(void);
     interrupt_priority_cfg priority;
+    ccp_capture_timer_t ccp_capture_timer;
     uint32 PWM_Freq;
     uint8 timer2_postscaler_value : 4;
     uint8 timer2_prescaler_value : 2;
@@ -120,7 +129,7 @@ Std_ReturnType CCP_Capture_mode_read_value(const ccp_t *_ccp_obj, uint16 *captur
 
 /*Compare mode functions*/
 Std_ReturnType CCP_isCompareComplete(const ccp_t *_ccp_obj, uint8 *_compare_status);
-Std_ReturnType CCP_Compare_Mode_Set_Value(uint16 compare_value);
+Std_ReturnType CCP_Compare_Mode_Set_Value(const ccp_t *_ccp_obj, uint16 compare_value);
 
 /*PWM mode functions*/
 Std_ReturnType CCP_PWM_Set_Duty(const ccp_t *_ccp_obj, const uint8 _duty);

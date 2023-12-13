@@ -9,6 +9,23 @@
     "mcal_interrupt_cfg.h": "c",
     "hal_timer2.h": "c",
     "hal_ccp1.h": "c",
-    "hal_ccp.h": "c"
+    "hal_ccp.h": "c",
+    "hal_gpio.h": "c",
+    "hal_usart.h": "c",
+    "hal_timer0.h": "c",
+    "hal_eeprom.h": "c",
+    "mcal_external_interrupt.h": "c",
+    "hal_adc.h": "c",
+    "ecu_layer_init.h": "c",
+    "ecu_keypad.h": "c",
+    "ecu_button.h": "c",
+    "device_config.h": "c",
+    "std_libraries.h": "c",
+    "hal_usart_cfg.h": "c",
+    "mcal_interrupt_manager.h": "c",
+    "hal_i2c.h": "c",
+    "compiler.h": "c",
+    "mem_map.h": "c",
+    "hal_spi.h": "c"
   }
 }

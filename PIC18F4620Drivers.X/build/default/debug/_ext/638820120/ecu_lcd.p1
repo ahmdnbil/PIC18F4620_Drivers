@@ -35,7 +35,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _lcd_4bit_set_cursor `(uc ~T0 @X0 0 sf3`*CS273`uc`uc ]
 "21
 [; ;../ECU_layer/LCD/ecu_lcd.c: 21: static void convertNumberToString(uint32 value, uint8 *str);
-[v _convertNumberToString `(v ~T0 @X0 0 sf2`ui`*uc ]
+[v _convertNumberToString `(v ~T0 @X0 0 sf2`ul`*uc ]
 "61 ../ECU_layer/LCD/./ecu_lcd.h
 [; ;../ECU_layer/LCD/./ecu_lcd.h: 61: {
 [s S274 `S272 1 `S272 1 `S272 -> 8 `i ]
@@ -856,7 +856,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "180
 [; ;../ECU_layer/LCD/ecu_lcd.c: 180: Std_ReturnType lcd_4bit_send_number(const lcd_4bit_t * _lcd,const uint8 * str,uint32 number)
-[v _lcd_4bit_send_number `(uc ~T0 @X0 1 ef3`*CS273`*Cuc`ui ]
+[v _lcd_4bit_send_number `(uc ~T0 @X0 1 ef3`*CS273`*Cuc`ul ]
 "181
 [; ;../ECU_layer/LCD/ecu_lcd.c: 181: {
 {
@@ -865,7 +865,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../ECU_layer/LCD/ecu_lcd.c: 180: Std_ReturnType lcd_4bit_send_number(const lcd_4bit_t * _lcd,const uint8 * str,uint32 number)
 [v __lcd `*CS273 ~T0 @X0 1 r1 ]
 [v _str `*Cuc ~T0 @X0 1 r2 ]
-[v _number `ui ~T0 @X0 1 r3 ]
+[v _number `ul ~T0 @X0 1 r3 ]
 "181
 [; ;../ECU_layer/LCD/ecu_lcd.c: 181: {
 [f ]
@@ -912,7 +912,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "195
 [; ;../ECU_layer/LCD/ecu_lcd.c: 195: Std_ReturnType lcd_4bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number)
-[v _lcd_4bit_send_number_pos `(uc ~T0 @X0 1 ef5`*CS273`*Cuc`uc`uc`ui ]
+[v _lcd_4bit_send_number_pos `(uc ~T0 @X0 1 ef5`*CS273`*Cuc`uc`uc`ul ]
 "196
 [; ;../ECU_layer/LCD/ecu_lcd.c: 196: {
 {
@@ -923,7 +923,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _str `*Cuc ~T0 @X0 1 r2 ]
 [v _row `uc ~T0 @X0 1 r3 ]
 [v _col `uc ~T0 @X0 1 r4 ]
-[v _number `ui ~T0 @X0 1 r5 ]
+[v _number `ul ~T0 @X0 1 r5 ]
 "196
 [; ;../ECU_layer/LCD/ecu_lcd.c: 196: {
 [f ]
@@ -1498,7 +1498,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "363
 [; ;../ECU_layer/LCD/ecu_lcd.c: 363: Std_ReturnType lcd_8bit_send_number(const lcd_8bit_t * _lcd,const uint8 * str,uint32 number)
-[v _lcd_8bit_send_number `(uc ~T0 @X0 1 ef3`*CS274`*Cuc`ui ]
+[v _lcd_8bit_send_number `(uc ~T0 @X0 1 ef3`*CS274`*Cuc`ul ]
 "364
 [; ;../ECU_layer/LCD/ecu_lcd.c: 364: {
 {
@@ -1507,7 +1507,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;../ECU_layer/LCD/ecu_lcd.c: 363: Std_ReturnType lcd_8bit_send_number(const lcd_8bit_t * _lcd,const uint8 * str,uint32 number)
 [v __lcd `*CS274 ~T0 @X0 1 r1 ]
 [v _str `*Cuc ~T0 @X0 1 r2 ]
-[v _number `ui ~T0 @X0 1 r3 ]
+[v _number `ul ~T0 @X0 1 r3 ]
 "364
 [; ;../ECU_layer/LCD/ecu_lcd.c: 364: {
 [f ]
@@ -1554,7 +1554,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "378
 [; ;../ECU_layer/LCD/ecu_lcd.c: 378: Std_ReturnType lcd_8bit_send_number_pos(const lcd_4bit_t * _lcd,const uint8 * str,uint8 row,uint8 col,uint32 number)
-[v _lcd_8bit_send_number_pos `(uc ~T0 @X0 1 ef5`*CS273`*Cuc`uc`uc`ui ]
+[v _lcd_8bit_send_number_pos `(uc ~T0 @X0 1 ef5`*CS273`*Cuc`uc`uc`ul ]
 "379
 [; ;../ECU_layer/LCD/ecu_lcd.c: 379: {
 {
@@ -1565,7 +1565,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _str `*Cuc ~T0 @X0 1 r2 ]
 [v _row `uc ~T0 @X0 1 r3 ]
 [v _col `uc ~T0 @X0 1 r4 ]
-[v _number `ui ~T0 @X0 1 r5 ]
+[v _number `ul ~T0 @X0 1 r5 ]
 "379
 [; ;../ECU_layer/LCD/ecu_lcd.c: 379: {
 [f ]
@@ -1612,14 +1612,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "394
 [; ;../ECU_layer/LCD/ecu_lcd.c: 394: static void convertNumberToString(uint32 value, uint8 *str)
-[v _convertNumberToString `(v ~T0 @X0 1 sf2`ui`*uc ]
+[v _convertNumberToString `(v ~T0 @X0 1 sf2`ul`*uc ]
 "395
 [; ;../ECU_layer/LCD/ecu_lcd.c: 395: {
 {
 [e :U _convertNumberToString ]
 "394
 [; ;../ECU_layer/LCD/ecu_lcd.c: 394: static void convertNumberToString(uint32 value, uint8 *str)
-[v _value `ui ~T0 @X0 1 r1 ]
+[v _value `ul ~T0 @X0 1 r1 ]
 [v _str `*uc ~T0 @X0 1 r2 ]
 "395
 [; ;../ECU_layer/LCD/ecu_lcd.c: 395: {
@@ -1631,11 +1631,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _counter -> -> 0 `i `uc ]
 "397
 [; ;../ECU_layer/LCD/ecu_lcd.c: 397:     uint32 reverseNumber = 1;
-[v _reverseNumber `ui ~T0 @X0 1 a ]
-[e = _reverseNumber -> -> 1 `i `ui ]
+[v _reverseNumber `ul ~T0 @X0 1 a ]
+[e = _reverseNumber -> -> -> 1 `i `l `ul ]
 "399
 [; ;../ECU_layer/LCD/ecu_lcd.c: 399:     if (0 == value)
-[e $ ! == -> -> 0 `i `ui _value 348  ]
+[e $ ! == -> -> -> 0 `i `l `ul _value 348  ]
 "400
 [; ;../ECU_layer/LCD/ecu_lcd.c: 400:     {
 {
@@ -1664,17 +1664,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "409
 [; ;../ECU_layer/LCD/ecu_lcd.c: 409:             reverseNumber = reverseNumber * 10 + (value % 10);
-[e = _reverseNumber + * _reverseNumber -> -> 10 `i `ui % _value -> -> 10 `i `ui ]
+[e = _reverseNumber + * _reverseNumber -> -> -> 10 `i `l `ul % _value -> -> -> 10 `i `l `ul ]
 "410
 [; ;../ECU_layer/LCD/ecu_lcd.c: 410:             value /= 10;
-[e =/ _value -> -> 10 `i `ui ]
+[e =/ _value -> -> -> 10 `i `l `ul ]
 "411
 [; ;../ECU_layer/LCD/ecu_lcd.c: 411:         }
 }
 [e :U 350 ]
 "407
 [; ;../ECU_layer/LCD/ecu_lcd.c: 407:         while (value != 0)
-[e $ != _value -> -> 0 `i `ui 351  ]
+[e $ != _value -> -> -> 0 `i `l `ul 351  ]
 [e :U 352 ]
 "412
 [; ;../ECU_layer/LCD/ecu_lcd.c: 412:         while (reverseNumber != 1)
@@ -1685,13 +1685,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "414
 [; ;../ECU_layer/LCD/ecu_lcd.c: 414:             rest = reverseNumber % 10;
-[e = _rest -> % _reverseNumber -> -> 10 `i `ui `uc ]
+[e = _rest -> % _reverseNumber -> -> -> 10 `i `l `ul `uc ]
 "415
 [; ;../ECU_layer/LCD/ecu_lcd.c: 415:             str[counter] = '0' + rest;
 [e = *U + _str * -> _counter `ux -> -> # *U _str `ui `ux -> + -> 48 `ui -> _rest `ui `uc ]
 "416
 [; ;../ECU_layer/LCD/ecu_lcd.c: 416:             reverseNumber /= 10;
-[e =/ _reverseNumber -> -> 10 `i `ui ]
+[e =/ _reverseNumber -> -> -> 10 `i `l `ul ]
 "417
 [; ;../ECU_layer/LCD/ecu_lcd.c: 417:             counter++;
 [e ++ _counter -> -> 1 `i `uc ]
@@ -1701,7 +1701,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 353 ]
 "412
 [; ;../ECU_layer/LCD/ecu_lcd.c: 412:         while (reverseNumber != 1)
-[e $ != _reverseNumber -> -> 1 `i `ui 354  ]
+[e $ != _reverseNumber -> -> -> 1 `i `l `ul 354  ]
 [e :U 355 ]
 "419
 [; ;../ECU_layer/LCD/ecu_lcd.c: 419:         str[counter] = '\0';

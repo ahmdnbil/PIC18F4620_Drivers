@@ -7,7 +7,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [c E2871 0 1 .. ]
 [n E2871 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
 [c E2875 0 1 2 3 .. ]
-[n E2875 . T3_NO_PRESCALER T3_PRESCALER_2 T3_PRESCALER_4 T3_PRESCALER_8  ]
+[n E2875 . T3_PRESCALER_1 T3_PRESCALER_2 T3_PRESCALER_4 T3_PRESCALER_8  ]
 "59 ../MCAL_layer/TIMER3/./hal_timer3.h
 [; ;../MCAL_layer/TIMER3/./hal_timer3.h: 59: {
 [s S273 `*F2883 1 `E2871 1 `us 1 `E2875 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]

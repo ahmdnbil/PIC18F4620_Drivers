@@ -139,5 +139,43 @@ void __interrupt() InterruptManagerHigh(void)
         TIMER3_OVF_ISR();
 #endif
     }
+
+    else if ((INTERRUPT_ENABLE == PIE1bits.CCP1IE) && (INTERRUPT_OCCUR == PIR1bits.CCP1IF))
+    {
+#if CCP1_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        CCP1_ISR();
+#endif
+    }
+
+    else if ((INTERRUPT_ENABLE == PIE2bits.CCP2IE) && (INTERRUPT_OCCUR == PIR2bits.CCP2IF))
+    {
+#if CCP2_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        CCP2_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE1bits.TXIE) && ((INTERRUPT_OCCUR == PIR1bits.TXIF)))
+    {
+#if USART_TX_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        EUSART_TX_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE1bits.RCIE) && ((INTERRUPT_OCCUR == PIR1bits.RCIF)))
+    {
+#if USART_RX_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        EUSART_RX_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE1bits.SSPIE) && (INTERRUPT_OCCUR == PIR1bits.SSPIF))
+    {
+#if MSSP_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        MSSP_I2C_ISR();
+#endif
+    }
+    else if ((INTERRUPT_ENABLE == PIE2bits.BCLIE) && (INTERRUPT_OCCUR == PIR2bits.BCLIF))
+    {
+#if MSSP_INTERRUPT_FEATURE_ENABLE == INTERRUPT_FEATURE_ENABLE
+        MSSP_I2C_BC_ISR();
+#endif
+    }
 }
 #endif

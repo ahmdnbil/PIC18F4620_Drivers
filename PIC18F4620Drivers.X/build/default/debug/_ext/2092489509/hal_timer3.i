@@ -4488,7 +4488,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 # 17 "../MCAL_layer/TIMER3/./../interrupt/./.././mem_map.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long int uint32;
 typedef signed char sint8;
 typedef signed short sint16;
 typedef signed int sint32;
@@ -4738,7 +4738,7 @@ typedef enum
 # 50 "../MCAL_layer/TIMER3/./hal_timer3.h"
 typedef enum
 {
-    T3_NO_PRESCALER,
+    T3_PRESCALER_1,
     T3_PRESCALER_2,
     T3_PRESCALER_4,
     T3_PRESCALER_8,

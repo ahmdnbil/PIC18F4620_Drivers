@@ -1,79 +1,66 @@
 /**
  * @file application.c
  * @author Ahmed Nabil (you@domain.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-10-14
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 /*------------------------section includes---------------------------*/
 #include "./application.h"
-#include "MCAL_layer/CCP1/hal_ccp1.h"
 
 /*-------------------------------------------------------------------*/
-void TIMER_Handeler(void);
 /*----------------------------Global Variables-----------------------*/
-volatile uint16 flag = 0;
-
-timer2_t tmr2 =
+Std_ReturnType ret;
+spi_t spi_obj =
     {
-        .Timer2_interruptHandeler = NULL,
-        .postscaler = T2_POSTSCALER_1,
-        .prescaler = T2_PRESCALER_1,
-        .priority = INTERRUPT_HIGH_PRIORITY,
-        .tiemr2_preload = 0};
-
-ccp_t ccp1_obj = {
-    .ccp_inst = CCP1_INST,
-    .CCP_InterruptHandler = NULL,
-    .priority = INTERRUPT_HIGH_PRIORITY,
-
-    .ccp_mode = CCP_PWM_MODE_SELECTED,
-    .PWM_Freq = 20000,
-    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
-    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
-    .ccp_mode_variant = CCP_PWM_MODE,
+        .spi_mode = SPI_MASTER_MODE,
+        .spi_mode_cfg = SPI_MASTER_WITH_CLK_DIV_04,
+        .spi_transmit_mode = SPI_TRANSMIT_FROM_IDLE_TO_ACTIVE,
+        .spi_clk_polarity = SPI_CLOCK_LOW_POLARITY,
+        .master_sample_bit = SPI_MASTER_MIDDLE_SAMPLE_BIT,
+        .ss_pin.pin = PIN0,
+        .ss_pin.port = PORTD_INDEX,
+        .ss_pin.direction = OUTPUT,
+        .ss_pin.logic = HIGH,
+};
+pin_config_t _pin2 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN1,
+        .port = PORTD_INDEX,
 };
 
-ccp_t ccp2_obj = {
-    .ccp_inst = CCP2_INST,
-    .CCP_InterruptHandler = NULL,
-    .priority = INTERRUPT_HIGH_PRIORITY,
-
-    .ccp_mode = CCP_PWM_MODE_SELECTED,
-    .PWM_Freq = 20000,
-    .timer2_prescaler_value = CCP_T2_POSTSCALER_1,
-    .timer2_postscaler_value = CCP_T2_PRESCALER_1,
-    .ccp_mode_variant = CCP_PWM_MODE,
+pin_config_t _pin3 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN2,
+        .port = PORTD_INDEX,
 };
+
+pin_config_t _pin4 =
+    {
+        .direction = OUTPUT,
+        .logic = HIGH,
+        .pin = PIN3,
+        .port = PORTD_INDEX,
+};
+uint8 receivedData;
 /*-------------------------------------------------------------------*/
-Std_ReturnType ret = E_OK;
 int main()
 {
-  ret = CCP_Init(&ccp1_obj);
-  ret = CCP_PWM_Set_Duty(&ccp1_obj, 50);
-  ret = CCP_PWM_Start(&ccp1_obj);
-
-  ret = CCP_Init(&ccp2_obj);
-  ret = CCP_PWM_Set_Duty(&ccp2_obj, 75);
-  ret = CCP_PWM_Start(&ccp2_obj);
-
-  ret = timer2_Intit(&tmr2);
+  ret = MSSP_SPI_Init(&spi_obj);
   while (1)
   {
-    // for (int i = 0; i < 100; i += 5)
-    // {
-    //   __delay_ms(5);
-    //   ret = CCP_PWM_Set_Duty(&ccp, i);
-    // }
+    ret = MSSP_SPI_Send_Data_default_ss_Blocking(&spi_obj, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin2, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin3, 'a', &receivedData);
+    ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin4, 'a', &receivedData);
   }
   return (EXIT_SUCCESS);
-}
-
-void TIMER_Handeler(void)
-{
-  flag++;
 }

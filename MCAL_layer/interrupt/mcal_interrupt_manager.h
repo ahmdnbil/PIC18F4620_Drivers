@@ -30,5 +30,11 @@ void TIMER0_ISR(void);
 void TIMER1_OVF_ISR(void);
 void TIMER2_COMP_ISR(void);
 void TIMER3_OVF_ISR(void);
+void CCP1_ISR();
+void CCP2_ISR();
+void EUSART_TX_ISR();
+void EUSART_RX_ISR();
+void MSSP_I2C_ISR();
+void MSSP_I2C_BC_ISR();
 
 #endif /* MCAL_INTERRUPT_MANAGER_H */

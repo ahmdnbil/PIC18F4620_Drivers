@@ -4486,7 +4486,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 # 17 "../MCAL_layer/interrupt/./.././mem_map.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
-typedef unsigned int uint32;
+typedef unsigned long int uint32;
 typedef signed char sint8;
 typedef signed short sint16;
 typedef signed int sint32;
@@ -4750,6 +4750,12 @@ void TIMER0_ISR(void);
 void TIMER1_OVF_ISR(void);
 void TIMER2_COMP_ISR(void);
 void TIMER3_OVF_ISR(void);
+void CCP1_ISR();
+void CCP2_ISR();
+void EUSART_TX_ISR();
+void EUSART_RX_ISR();
+void MSSP_I2C_ISR();
+void MSSP_I2C_BC_ISR();
 # 12 "../MCAL_layer/interrupt/mcal_interrupt_manager.c" 2
 
 
@@ -4850,6 +4856,44 @@ void __attribute__((picinterrupt(("")))) InterruptManagerHigh(void)
     {
 
         TIMER3_OVF_ISR();
+
+    }
+
+    else if ((1U == PIE1bits.CCP1IE) && (1U == PIR1bits.CCP1IF))
+    {
+
+        CCP1_ISR();
+
+    }
+
+    else if ((1U == PIE2bits.CCP2IE) && (1U == PIR2bits.CCP2IF))
+    {
+
+        CCP2_ISR();
+
+    }
+    else if ((1U == PIE1bits.TXIE) && ((1U == PIR1bits.TXIF)))
+    {
+
+        EUSART_TX_ISR();
+
+    }
+    else if ((1U == PIE1bits.RCIE) && ((1U == PIR1bits.RCIF)))
+    {
+
+        EUSART_RX_ISR();
+
+    }
+    else if ((1U == PIE1bits.SSPIE) && (1U == PIR1bits.SSPIF))
+    {
+
+        MSSP_I2C_ISR();
+
+    }
+    else if ((1U == PIE2bits.BCLIE) && (1U == PIR2bits.BCLIF))
+    {
+
+        MSSP_I2C_BC_ISR();
 
     }
 }

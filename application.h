@@ -23,9 +23,11 @@
 #include "./MCAL_layer/TIMER1/hal_timer1.h"
 #include "./MCAL_layer/TIMER2/hal_timer2.h"
 #include "./MCAL_layer/TIMER3/hal_timer3.h"
-#include "./MCAL_layer/CCP/hal_ccp.h"
+#include "MCAL_layer/CCP/hal_ccp.h"
+#include "./MCAL_layer/USART/hal_usart.h"
+#include "./MCAL_layer/I2C/hal_i2c.h"
+#include "./MCAL_layer/SPI/hal_spi.h"
 /* MACRO Declarations */
-#define _XTAL_FREQ 4000000UL
 /* MACRO function declarations */
 
 /* Data types*/

@@ -1,46 +1,31 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3236 `(v ~T0 @X0 0 tf ]
-"21 ../application.c
-[; ;../application.c: 21: timer2_t tmr2 =
-[c E3039 0 1 .. ]
-[n E3039 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
-[c E3211 0 1 2 .. ]
-[n E3211 . T2_PRESCALER_1 T2_PRESCALER_4 T2_PRESCALER_16  ]
-[c E3216 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 .. ]
-[n E3216 . T2_POSTSCALER_1 T2_POSTSCALER_2 T2_POSTSCALER_3 T2_POSTSCALER_4 T2_POSTSCALER_5 T2_POSTSCALER_6 T2_POSTSCALER_7 T2_POSTSCALER_8 T2_POSTSCALER_9 T2_POSTSCALER_10 T2_POSTSCALER_11 T2_POSTSCALER_12 T2_POSTSCALER_13 T2_POSTSCALER_14 T2_POSTSCALER_15 T2_POSTSCALER_16  ]
-"56 .././MCAL_layer/TIMER2/hal_timer2.h
-[; ;.././MCAL_layer/TIMER2/hal_timer2.h: 56: {
-[s S287 `*F3236 1 `E3039 1 `uc 1 `E3211 1 `E3216 1 ]
-[n S287 . Timer2_interruptHandeler priority tiemr2_preload prescaler postscaler ]
-[v F3359 `(v ~T0 @X0 0 tf ]
-"29 ../application.c
-[; ;../application.c: 29: ccp_t ccp1_obj = {
-[c E3317 0 1 .. ]
-[n E3317 . CCP1_INST CCP2_INST  ]
-[c E3303 0 1 2 .. ]
-[n E3303 . CCP_CAPTURE_MODE_SELECTED CCP_COMPARE_MODE_SELECTED CCP_PWM_MODE_SELECTED  ]
-[v F3326 `(v ~T0 @X0 0 tf ]
-"102 ../MCAL_layer/CCP1/hal_ccp1.h
-[s S292 `E3317 1 `E3303 1 `uc 1 `*F3326 1 `E3039 1 `ui 1 :4 `uc 1 :2 `uc 1 ]
-[n S292 . ccp_inst ccp_mode ccp_mode_variant CCP_InterruptHandler priority PWM_Freq timer2_postscaler_value timer2_prescaler_value ]
-[v F3361 `(v ~T0 @X0 0 tf ]
-"29 ../application.c
-[; ;../application.c: 29: ccp_t ccp1_obj = {
-[c E3280 1 4 16 .. ]
-[n E3280 . CCP_T2_PRESCALER_1 CCP_T2_PRESCALER_4 CCP_T2_PRESCALER_16  ]
-[c E3285 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 .. ]
-[n E3285 . CCP_T2_POSTSCALER_1 CCP_T2_POSTSCALER_2 CCP_T2_POSTSCALER_3 CCP_T2_POSTSCALER_4 CCP_T2_POSTSCALER_5 CCP_T2_POSTSCALER_6 CCP_T2_POSTSCALER_7 CCP_T2_POSTSCALER_8 CCP_T2_POSTSCALER_9 CCP_T2_POSTSCALER_10 CCP_T2_POSTSCALER_11 CCP_T2_POSTSCALER_12 CCP_T2_POSTSCALER_13 CCP_T2_POSTSCALER_14 CCP_T2_POSTSCALER_15 CCP_T2_POSTSCALER_16  ]
-[v F3363 `(v ~T0 @X0 0 tf ]
+"70 .././MCAL_layer/SPI/./../GPIO/hal_gpio.h
+[s S272 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S272 . port pin direction logic ]
+"74 .././MCAL_layer/SPI/hal_spi.h
+[; ;.././MCAL_layer/SPI/hal_spi.h: 74: {
+[s S300 :1 `uc 1 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `S272 1 ]
+[n S300 . spi_mode spi_mode_cfg master_sample_bit spi_transmit_mode spi_clk_polarity ss_pin ]
+"18 ../application.c
+[; ;../application.c: 18: spi_t spi_obj =
+[c E2829 0 1 2 3 4 .. ]
+[n E2829 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2819 0 1 2 3 4 5 6 7 .. ]
+[n E2819 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E2815 0 1 .. ]
+[n E2815 . OUTPUT INPUT  ]
+[c E2811 0 1 .. ]
+[n E2811 . LOW HIGH  ]
 [p mainexit ]
-"114 ../MCAL_layer/CCP1/hal_ccp1.h
-[v _CCP_Init `(uc ~T0 @X0 0 ef1`*CS292 ]
-"126
-[v _CCP_PWM_Set_Duty `(uc ~T0 @X0 0 ef2`*CS292`Cuc ]
-"127
-[v _CCP_PWM_Start `(uc ~T0 @X0 0 ef1`*CS292 ]
-"71 .././MCAL_layer/TIMER2/hal_timer2.h
-[; ;.././MCAL_layer/TIMER2/hal_timer2.h: 71: Std_ReturnType timer2_Intit(const timer2_t *_timer);
-[v _timer2_Intit `(uc ~T0 @X0 0 ef1`*CS287 ]
+"83 .././MCAL_layer/SPI/hal_spi.h
+[; ;.././MCAL_layer/SPI/hal_spi.h: 83: Std_ReturnType MSSP_SPI_Init(const spi_t *_spi);
+[v _MSSP_SPI_Init `(uc ~T0 @X0 0 ef1`*CS300 ]
+"85
+[; ;.././MCAL_layer/SPI/hal_spi.h: 85: Std_ReturnType MSSP_SPI_Send_Data_default_ss_Blocking(const spi_t *_spi, uint8 data, uint8 *receivedData);
+[v _MSSP_SPI_Send_Data_default_ss_Blocking `(uc ~T0 @X0 0 ef3`*CS300`uc`*uc ]
+"86
+[; ;.././MCAL_layer/SPI/hal_spi.h: 86: Std_ReturnType MSSP_SPI_Send_Data_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData);
+[v _MSSP_SPI_Send_Data_specific_ss_Blocking `(uc ~T0 @X0 0 ef4`*CS300`*CS272`uc`*uc ]
 "54 D:/New folder (2)/Microchip/MPLABX/v6.15/packs/Microchip/PIC18Fxxxx_DFP/1.4.151/xc8\pic\include\proc\pic18f4620.h
 [; <" PORTA equ 0F80h ;# ">
 "191
@@ -315,128 +300,114 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSH equ 0FFEh ;# ">
 "6715
 [; <" TOSU equ 0FFFh ;# ">
-"19 ../application.c
-[; ;../application.c: 19: volatile uint16 flag = 0;
-[v _flag `Vus ~T0 @X0 1 e ]
-[i _flag
--> -> 0 `i `us
-]
-"21
-[; ;../application.c: 21: timer2_t tmr2 =
-[v _tmr2 `S287 ~T0 @X0 1 e ]
-[i _tmr2
+"17 ../application.c
+[; ;../application.c: 17: Std_ReturnType ret;
+[v _ret `uc ~T0 @X0 1 e ]
+"18
+[; ;../application.c: 18: spi_t spi_obj =
+[v _spi_obj `S300 ~T0 @X0 1 e ]
+[i _spi_obj
 :U ..
 :U ..
--> -> -> 0 `i `*v `*F3359
-. `E3039 1
+-> -> 1 `i `uc
 -> -> 0 `i `uc
-. `E3211 0
-. `E3216 0
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+:U ..
+:U ..
+-> . `E2829 3 `uc
+-> . `E2819 0 `uc
+-> . `E2815 0 `uc
+-> . `E2811 1 `uc
+..
+..
 ..
 ..
 ]
-"29
-[; ;../application.c: 29: ccp_t ccp1_obj = {
-[v _ccp1_obj `S292 ~T0 @X0 1 e ]
-[i _ccp1_obj
+"30
+[; ;../application.c: 30: pin_config_t _pin2 =
+[v __pin2 `S272 ~T0 @X0 1 e ]
+[i __pin2
 :U ..
 :U ..
-. `E3317 0
-. `E3303 2
--> -> 12 `i `uc
--> -> -> 0 `i `*v `*F3361
-. `E3039 1
--> -> 20000 `i `ui
--> . `E3280 0 `uc
--> . `E3285 0 `uc
+-> . `E2829 3 `uc
+-> . `E2819 1 `uc
+-> . `E2815 0 `uc
+-> . `E2811 1 `uc
 ..
 ..
 ]
-"41
-[; ;../application.c: 41: ccp_t ccp2_obj = {
-[v _ccp2_obj `S292 ~T0 @X0 1 e ]
-[i _ccp2_obj
+"38
+[; ;../application.c: 38: pin_config_t _pin3 =
+[v __pin3 `S272 ~T0 @X0 1 e ]
+[i __pin3
 :U ..
 :U ..
-. `E3317 1
-. `E3303 2
--> -> 12 `i `uc
--> -> -> 0 `i `*v `*F3363
-. `E3039 1
--> -> 20000 `i `ui
--> . `E3280 0 `uc
--> . `E3285 0 `uc
+-> . `E2829 3 `uc
+-> . `E2819 2 `uc
+-> . `E2815 0 `uc
+-> . `E2811 1 `uc
+..
+..
+]
+"46
+[; ;../application.c: 46: pin_config_t _pin4 =
+[v __pin4 `S272 ~T0 @X0 1 e ]
+[i __pin4
+:U ..
+:U ..
+-> . `E2829 3 `uc
+-> . `E2819 3 `uc
+-> . `E2815 0 `uc
+-> . `E2811 1 `uc
 ..
 ..
 ]
 "53
-[; ;../application.c: 53: Std_ReturnType ret = (Std_ReturnType)0x01;
-[v _ret `uc ~T0 @X0 1 e ]
-[i _ret
--> -> 1 `i `uc
-]
+[; ;../application.c: 53: uint8 receivedData;
+[v _receivedData `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"54
-[; ;../application.c: 54: int main()
-[v _main `(i ~T0 @X0 1 ef ]
 "55
-[; ;../application.c: 55: {
+[; ;../application.c: 55: int main()
+[v _main `(i ~T0 @X0 1 ef ]
+"56
+[; ;../application.c: 56: {
 {
 [e :U _main ]
 [f ]
-"56
-[; ;../application.c: 56:   ret = CCP_Init(&ccp1_obj);
-[e = _ret ( _CCP_Init (1 -> &U _ccp1_obj `*CS292 ]
 "57
-[; ;../application.c: 57:   ret = CCP_PWM_Set_Duty(&ccp1_obj, 50);
-[e = _ret ( _CCP_PWM_Set_Duty (2 , -> &U _ccp1_obj `*CS292 -> -> 50 `i `uc ]
+[; ;../application.c: 57:   ret = MSSP_SPI_Init(&spi_obj);
+[e = _ret ( _MSSP_SPI_Init (1 -> &U _spi_obj `*CS300 ]
 "58
-[; ;../application.c: 58:   ret = CCP_PWM_Start(&ccp1_obj);
-[e = _ret ( _CCP_PWM_Start (1 -> &U _ccp1_obj `*CS292 ]
+[; ;../application.c: 58:   while (1)
+[e :U 303 ]
+"59
+[; ;../application.c: 59:   {
+{
 "60
-[; ;../application.c: 60:   ret = CCP_Init(&ccp2_obj);
-[e = _ret ( _CCP_Init (1 -> &U _ccp2_obj `*CS292 ]
+[; ;../application.c: 60:     ret = MSSP_SPI_Send_Data_default_ss_Blocking(&spi_obj, 'a', &receivedData);
+[e = _ret ( _MSSP_SPI_Send_Data_default_ss_Blocking (3 , , -> &U _spi_obj `*CS300 -> -> 97 `ui `uc &U _receivedData ]
 "61
-[; ;../application.c: 61:   ret = CCP_PWM_Set_Duty(&ccp2_obj, 75);
-[e = _ret ( _CCP_PWM_Set_Duty (2 , -> &U _ccp2_obj `*CS292 -> -> 75 `i `uc ]
+[; ;../application.c: 61:     ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin2, 'a', &receivedData);
+[e = _ret ( _MSSP_SPI_Send_Data_specific_ss_Blocking (4 , , , -> &U _spi_obj `*CS300 -> &U __pin2 `*CS272 -> -> 97 `ui `uc &U _receivedData ]
 "62
-[; ;../application.c: 62:   ret = CCP_PWM_Start(&ccp2_obj);
-[e = _ret ( _CCP_PWM_Start (1 -> &U _ccp2_obj `*CS292 ]
+[; ;../application.c: 62:     ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin3, 'a', &receivedData);
+[e = _ret ( _MSSP_SPI_Send_Data_specific_ss_Blocking (4 , , , -> &U _spi_obj `*CS300 -> &U __pin3 `*CS272 -> -> 97 `ui `uc &U _receivedData ]
+"63
+[; ;../application.c: 63:     ret = MSSP_SPI_Send_Data_specific_ss_Blocking(&spi_obj, &_pin4, 'a', &receivedData);
+[e = _ret ( _MSSP_SPI_Send_Data_specific_ss_Blocking (4 , , , -> &U _spi_obj `*CS300 -> &U __pin4 `*CS272 -> -> 97 `ui `uc &U _receivedData ]
 "64
-[; ;../application.c: 64:   ret = timer2_Intit(&tmr2);
-[e = _ret ( _timer2_Intit (1 -> &U _tmr2 `*CS287 ]
+[; ;../application.c: 64:   }
+}
+[e :U 302 ]
+[e $U 303  ]
+[e :U 304 ]
 "65
-[; ;../application.c: 65:   while (1)
-[e :U 295 ]
-"66
-[; ;../application.c: 66:   {
-{
-"72
-[; ;../application.c: 72:   }
-}
-[e :U 294 ]
-[e $U 295  ]
-[e :U 296 ]
-"73
-[; ;../application.c: 73:   return (0);
+[; ;../application.c: 65:   return (0);
 [e ) -> 0 `i ]
-[e $UE 293  ]
-"74
-[; ;../application.c: 74: }
-[e :UE 293 ]
-}
-"76
-[; ;../application.c: 76: void TIMER_Handeler(void)
-[v _TIMER_Handeler `(v ~T0 @X0 1 ef ]
-"77
-[; ;../application.c: 77: {
-{
-[e :U _TIMER_Handeler ]
-[f ]
-"78
-[; ;../application.c: 78:   flag++;
-[e ++ _flag -> -> 1 `i `Vus ]
-"79
-[; ;../application.c: 79: }
-[e :UE 297 ]
+[e $UE 301  ]
+"66
+[; ;../application.c: 66: }
+[e :UE 301 ]
 }

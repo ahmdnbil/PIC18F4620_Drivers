@@ -49,7 +49,7 @@
 /*---------------------------------------Data types-------------------------------------------*/
 typedef enum
 {
-    T3_NO_PRESCALER,
+    T3_PRESCALER_1,
     T3_PRESCALER_2,
     T3_PRESCALER_4,
     T3_PRESCALER_8,

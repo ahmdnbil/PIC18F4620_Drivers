@@ -35,5 +35,9 @@ build/default/debug/_ext/1472/application.p1:  \
 .././MCAL_layer/TIMER1/hal_timer1.h  \
 .././MCAL_layer/TIMER2/hal_timer2.h  \
 .././MCAL_layer/TIMER3/hal_timer3.h  \
-.././MCAL_layer/CCP1/hal_ccp1.h  \
-.././MCAL_layer/CCP1/./ccp1_cfg.h 
+../MCAL_layer/CCP/hal_ccp.h  \
+../MCAL_layer/CCP/./ccp_cfg.h  \
+.././MCAL_layer/USART/hal_usart.h  \
+.././MCAL_layer/USART/./hal_usart_cfg.h  \
+.././MCAL_layer/I2C/hal_i2c.h  \
+.././MCAL_layer/SPI/hal_spi.h 
