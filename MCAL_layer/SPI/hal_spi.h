@@ -83,6 +83,6 @@ typedef struct
 Std_ReturnType MSSP_SPI_Init(const spi_t *_spi);
 Std_ReturnType MSSP_SPI_DeInit(const spi_t *_spi);
 Std_ReturnType MSSP_SPI_Transive_default_ss_Blocking(const spi_t *_spi, uint8 data, uint8 *receivedData);
-Std_ReturnType MSSP_SPI_Send_Data_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData);
+Std_ReturnType MSSP_SPI_Transive_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData);
 
 #endif /* BE5B54D1_82B4_4863_B45C_C191ACBF7B96 */

@@ -65,7 +65,7 @@ Std_ReturnType MSSP_SPI_DeInit(const spi_t *_spi)
     return ret;
 }
 
-Std_ReturnType MSSP_SPI_Send_Data_default_ss_Blocking(const spi_t *_spi, uint8 data, uint8 *receivedData)
+Std_ReturnType MSSP_SPI_Transive_default_ss_Blocking(const spi_t *_spi, uint8 data, uint8 *receivedData)
 {
     Std_ReturnType ret = E_OK;
     if (NULL == _spi)
@@ -93,7 +93,7 @@ Std_ReturnType MSSP_SPI_Send_Data_default_ss_Blocking(const spi_t *_spi, uint8 d
     return ret;
 }
 
-Std_ReturnType MSSP_SPI_Send_Data_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData)
+Std_ReturnType MSSP_SPI_Transive_specific_ss_Blocking(const spi_t *_spi, const pin_config_t *ss_pin, uint8 data, uint8 *receivedData)
 {
     Std_ReturnType ret = E_OK;
     if (NULL == _spi)
